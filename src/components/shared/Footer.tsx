@@ -298,7 +298,7 @@ export default function Footer() {
                   </li>
                   <ul className="p-2">
                     <li>📞 Connect with Our Design Leaders Today</li>
-                    <li>📧 Email: info@manthanarchitects.com</li>
+                    <li>📧 Email: hello@manthanarchitects.com</li>
                     <li>
                       📍 Visit: Our design studios in Mumbai, Delhi, Bangalore
                     </li>
@@ -423,7 +423,7 @@ export default function Footer() {
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
-                <div>info@manthanarchitects.com</div>
+                <div>hello@manthanarchitects.com</div>
               </li>
               <li className="flex items-center gap-2">
                 <div>
