@@ -1,42 +1,52 @@
+
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { name, company, email, phone, message } = await req.json();
-  if (!name || !email || !phone || !message) {
-    return NextResponse.json(
-      { error: "Missing required fields" },
-      { status: 400 }
-    );
-  }
-
   try {
+    const { name, company, email, phone, message } = await req.json();
+
+    // 1. Zoho SMTP Transporter Configuration
     const transporter = nodemailer.createTransport({
-      host: "smtp.yourmailserver.com",
+      host: "smtppro.zoho.in", // Zoho India server
       port: 465,
-      secure: true,
+      secure: true, // Port 465 uses SSL
       auth: {
-        user: "your@email.com",
-        pass: "yourpassword",
+        user: "hello@manthanarchitects.com", 
+        pass: "Manthanarchitects@2026", 
       },
     });
 
-    await transporter.sendMail({
-      from: '"Space Manthan" <your@email.com>',
-      to: "your@email.com",
-      subject: `New Contact Form Submission from ${name}`,
+    // 2. Mail Options
+    const mailOptions = {
+      from: "hello@manthanarchitects.com", // Zoho mein 'from' hamesha login user hi hona chahiye
+      to: "hello@manthanarchitects.com",   // Aapko isi par mail milegi
+      replyTo: email,                      // Taaki aap seedha user ko reply kar sakein
+      subject: `New Inquiry from ${name} - ${company || "No Company"}`,
       html: `
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
+        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+          <h2 style="color: #333;">New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Company:</strong> ${company || "N/A"}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p style="margin-top: 20px;"><strong>Message:</strong></p>
+          <div style="background: #f4f4f4; padding: 15px; border-radius: 5px;">
+            ${message.replace(/\n/g, "<br/>")}
+          </div>
+        </div>
       `,
-    });
+    };
 
-    return NextResponse.json({ success: true });
+    // 3. Send the mail
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("Contact form email error:", error);
-    return NextResponse.json({ success: false }, { status: 500 });
+    console.error("Zoho Email Error:", error);
+    return NextResponse.json(
+      { success: false, error: "Failed to send email" },
+      { status: 500 }
+    );
   }
 }

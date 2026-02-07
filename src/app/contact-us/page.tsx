@@ -102,7 +102,7 @@ export default function ContactPage() {
           <Mail className="text-primary w-8 h-8 mb-4" />
           <h4 className="font-bold text-xl mb-2">Email</h4>
           <p className="text-gray-600 text-lg font-semibold dark:text-gray-400">
-            info@spacemanthan.com
+            hello@manthanarchitects.com
           </p>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function ContactPage() {
           <div className="bg-gray-50 px-5 py-10 m-[-40px] min-w-96 border border-gray-200 rounded-xl shadow-lg">
             <h3 className="text-2xl font-bold mb-2">Our Office Address</h3>
             <p className="text-gray-700 text-lg font-semibold dark:text-gray-300">
-              Space Manthan,
+              Manthanarchitects,
               <br />
               J-2/5, DLF City Phase - 2, Sector - 25,
               <br />
