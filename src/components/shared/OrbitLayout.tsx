@@ -62,8 +62,8 @@ export default function OrbitLayout() {
       {/* Center logo */}
       <div className="absolute z-10 text-center">
         <Image
-          src="/images/space-manthan-round.png"
-          alt="Space Manthan"
+          src="/logoo.jpeg"
+          alt="Manthanarchitects"
           width={120}
           height={120}
           className="mx-auto rounded-full"
