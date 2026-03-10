@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -42,34 +42,46 @@ export default function Header() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-3 items-center"
       >
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/logoo.jpeg" // Replace with your actual logo file path
-            alt="Space Manthan"
-            width={34}
-            height={34}
-            className="object-contain"
-          />
-          <span className="text-xl font-bold text-[#012169]">
-            Manthanarchitects
-          </span>
-        </Link>
-
+        {/* Left Nav */}
         <nav className="hidden md:flex space-x-6">
-          {navLinks.map((link) => (
+          {navLinks.slice(0, 3).map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-[#012169] hover:text-[#012169] transition font-semibold"
+              className="text-[#012169] hover:text-[#c8a96e] transition font-semibold text-sm"
             >
               {link.name}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        {/* Center Logo + Name */}
+        <Link href="/" className="flex items-center justify-center gap-2">
+          <Image
+            src="/logoo.jpeg"
+            alt="Manthan Architects"
+            width={36}
+            height={36}
+            className="object-contain"
+          />
+          <span className="text-xl font-bold text-[#012169] tracking-wide">
+            Manthan Architects
+          </span>
+        </Link>
+
+        {/* Right Nav + CTA */}
+        <div className="hidden md:flex items-center justify-end space-x-6">
+          {navLinks.slice(3).map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-[#012169] hover:text-[#c8a96e] transition font-semibold text-sm"
+            >
+              {link.name}
+            </Link>
+          ))}
           <Link href="/contact-us">
             <Button
               variant="outline"
@@ -81,7 +93,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden flex justify-end">
           <button onClick={() => setIsOpen(!isOpen)} className="text-gray-900">
             {isOpen ? <X size={24} color="white" /> : <Menu size={24} />}
           </button>

@@ -3,7 +3,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const images = [
   "/images/home/hero-image-1.webp",
@@ -14,37 +14,58 @@ const images = [
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Auto-play logic
-  useEffect(() => {
-    const timer = setInterval(() => {
+  const startAutoPlay = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 5000);
-    return () => clearInterval(timer);
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
   }, []);
 
-  const prevSlide = () =>
+  const prevSlide = () => {
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  const nextSlide = () =>
+    startAutoPlay();
+  };
+  const nextSlide = () => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % images.length);
+    startAutoPlay();
+  };
+
+  const variants = {
+    enter: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%" }),
+    center: { x: 0 },
+    exit: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%" }),
+  };
 
   return (
-    <section className="relative h-[650px] w-full overflow-hidden">
-      {/* Image Slider Background */}
-      <AnimatePresence mode="wait">
+    <section className="relative w-full h-[calc(100vh-80px)] min-h-[500px] overflow-hidden">
+      {/* Sliding Images */}
+      <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2 }}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${images[currentIndex]}')` }}
         />
       </AnimatePresence>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-1" />
+      <div className="absolute inset-0 bg-black/20 z-10" />
 
       {/* Left Arrow */}
       <button
@@ -69,7 +90,11 @@ export default function Hero() {
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => {
+              setDirection(index > currentIndex ? 1 : -1);
+              setCurrentIndex(index);
+              startAutoPlay();
+            }}
             className={`h-2 w-8 rounded-full transition-all ${
               currentIndex === index ? "bg-white" : "bg-white/40"
             }`}
