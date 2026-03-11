@@ -20,12 +20,12 @@ export default function ThreeColumnImages({
   columns,
 }: ThreeColumnImagesProps) {
   return (
-    <section className="py-24 text-center overflow-visible">
+    <section className="py-10 text-center overflow-visible">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Heading */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-28 text-gray-900 tracking-tight"
+          className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

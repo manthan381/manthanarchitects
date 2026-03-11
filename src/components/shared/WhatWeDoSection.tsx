@@ -30,13 +30,13 @@ const services = [
 
 export default function WhatWeDoSection() {
   return (
-    <section className="py-24 bg-[#dff1e0] overflow-hidden">
+    <section className="pt-10 pb-8 bg-[#dff1e0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="text-left">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-2 block"
@@ -48,7 +48,7 @@ export default function WhatWeDoSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-gray-950 tracking-tighter"
+              className="text-4xl md:text-4xl font-bold text-gray-950 tracking-tighter"
             >
               What We Do
             </motion.h2>
@@ -61,7 +61,7 @@ export default function WhatWeDoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-gray-900 text-lg md:text-xl text-left border-l-4 border-primary pl-6 mb-20 leading-relaxed max-w-6xl"
+          className="text-gray-900 text-lg md:text-xl text-left border-l-4 border-primary pl-6 mb-10 leading-relaxed max-w-6xl"
         >
           We provide end-to-end solutions in Architecture, Interior Designing,
           Construction, and Modular & Custom Furniture — all under one roof for

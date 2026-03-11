@@ -10,6 +10,10 @@ const images = [
   "/images/home/hero-image-2.webp",
   "/images/home/hero-image-3.webp",
   "/images/home/hero-image-4.webp",
+  "/images/home/hero-image-5.webp",
+  "/images/home/hero-image-7.webp",
+  "/images/home/hero-image-8.webp",
+
 ];
 
 export default function Hero() {
@@ -95,9 +99,8 @@ export default function Hero() {
               setCurrentIndex(index);
               startAutoPlay();
             }}
-            className={`h-2 w-8 rounded-full transition-all ${
-              currentIndex === index ? "bg-white" : "bg-white/40"
-            }`}
+            className={`h-2 w-8 rounded-full transition-all ${currentIndex === index ? "bg-white" : "bg-white/40"
+              }`}
           />
         ))}
       </div>
