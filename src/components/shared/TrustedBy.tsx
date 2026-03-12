@@ -34,9 +34,9 @@ const clientLogos = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-20">
+    <section className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl text-gray-900 pb-14">
+        <h2 className="text-3xl sm:text-4xl text-gray-900 pb-10">
           Trusted by <span className="font-bold">Leading Brands</span>
         </h2>
 

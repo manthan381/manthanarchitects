@@ -3,32 +3,36 @@
 "use client";
 
 import {
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Smartphone,
-  CalendarClock,
-  MessageCircle,
-  Youtube,
-} from "lucide-react";
-import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  CalendarClock,
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Smartphone,
+  Youtube,
+} from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
     <>
       <footer className="bg-[#273027] text-white">
-        <Accordion
-          type="single"
-          collapsible
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-y border-y-gray-800"
-        >
+        <div className={pathname === '/' ? 'hidden' : 'block'}>
+          <Accordion
+            type="single"
+            collapsible
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-y border-y-gray-800"
+          >
           <AccordionItem value="item-1">
             <AccordionTrigger>
               Learn more about Manthanarchitects – Leading Architectural, Builder
@@ -308,14 +312,15 @@ export default function Footer() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 my-20">
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-8 pt-10">
           {/* Logo + About */}
           <div>
             <h2 className="text-2xl font-bold text-white mb-4">
-              Manthanarchitects
+              Manthan Architects
             </h2>
             <p className="text-gray-400">
-              Manthanarchitects is a platform that is transforming the experience of
+              Manthan Architects is a platform that is transforming the experience of
               creating, maintaining, and managing spaces with technology,
               organizing the industry, creating standards and processes, and
               driving transparency.
@@ -400,7 +405,7 @@ export default function Footer() {
                   />
                 </div>
                 <div>
-                  <p>Manthanarchitects,</p>
+                  <p>Manthan Architects,</p>
                   <p className="mt-1">
                     J-2/5, DLF City Phase - 2, Sector - 25, Gurugram, Haryana -
                     122008
@@ -448,18 +453,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-neutral-700 py-6 text-center text-gray-300">
+        <div className="mt-4 border-t border-neutral-700 py-6 text-center text-gray-300">
           <p className="text-xs">
-            &copy; {new Date().getFullYear()} Manthanarchitects. All rights
+            © {new Date().getFullYear()} Manthan Architects. All rights
             reserved.
             <br />
-            Content Owned, updated and maintained by Manthanarchitects.
+            Content Owned, updated and maintained by Manthan Architects.
             <br />
             The information or content displayed on this website is the
-            intellectual property of the Manthanarchitects.com.
+            intellectual property of the Manthan Architects.com.
             <br />
             All the trademarks, copyrights, industrial designs, and patents are
-            the intellectual property of Manthanarchitects.
+            the intellectual property of Manthan Architects.
           </p>
         </div>
       </footer>
