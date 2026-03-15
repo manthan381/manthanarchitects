@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import {
@@ -10,24 +8,21 @@ import {
 } from "@/components/ui/accordion";
 import {
   CalendarClock,
-  Facebook,
-  Instagram,
   Mail,
   MapPin,
   MessageCircle,
   Smartphone,
-  Youtube,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <>
-      <footer className="bg-[#273027] text-white">
-        <div className={pathname === '/' ? 'hidden' : 'block'}>
+    <footer className="bg-[#273027] text-white">
+        <div className={pathname === '/' || pathname === '/about-us' || pathname === '/architects-design' || pathname === '/elevation-design' ? 'hidden' : 'block'}>
           <Accordion
             type="single"
             collapsible
@@ -330,22 +325,40 @@ export default function Footer() {
               <h3 className="text-2xl font-bold text-white mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/manthandezinstudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our Facebook"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <Facebook size={32} />
+                  <FaFacebookF size={30} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/manthan.architects/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our Instagram"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <Instagram size={32} />
+                  <FaInstagram size={30} />
                 </a>
                 <a
-                  href="#"
+                  href="https://in.linkedin.com/company/manthan-dezin-studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our LinkedIn"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <Youtube size={32} />
+                  <FaLinkedinIn size={30} />
+                </a>
+                <a
+                  href="https://x.com/manthan_archi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our X"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  <FaXTwitter size={30} />
                 </a>
               </div>
             </div>
@@ -368,8 +381,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/expertise" className="hover:text-white transition">
-                  Expertise
+                <Link href="/architecture" className="hover:text-white transition">
+                  Architects Design
+                </Link>
+              </li>
+              <li>
+                <Link href="/elevation-design" className="hover:text-white transition">
+                  Elevation Design
                 </Link>
               </li>
               <li>
@@ -378,8 +396,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="hover:text-white transition">
-                  Blogs
+                <Link href="/blog" className="hover:text-white transition">
+                  Blog
                 </Link>
               </li>
               <li>
@@ -468,6 +486,5 @@ export default function Footer() {
           </p>
         </div>
       </footer>
-    </>
   );
 }
