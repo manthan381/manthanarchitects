@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -8,9 +7,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
-  { name: "Expertise", href: "/expertise" },
+  { name: "Architects Design", href: "/architects-design" },
+  { name: "Elevation Design", href: "/elevation-design" },
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact-us" },
@@ -71,7 +70,7 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Right Nav + CTA */}
+        {/* Right Nav */}
         <div className="hidden md:flex items-center justify-end space-x-6">
           {navLinks.slice(3).map((link) => (
             <Link
@@ -82,14 +81,6 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          <Link href="/contact-us">
-            <Button
-              variant="outline"
-              className="bg-[#012169] text-white hover:bg-gray-100 hover:text-[#012169]"
-            >
-              Get in Touch
-            </Button>
-          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

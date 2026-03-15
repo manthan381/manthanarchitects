@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-  "/images/home/hero-image-1.webp",
   "/images/home/hero-image-2.webp",
   "/images/home/hero-image-3.webp",
   "/images/home/hero-image-4.webp",

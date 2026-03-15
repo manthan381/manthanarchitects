@@ -23,7 +23,7 @@ export default function Home() {
     },
     {
       imageSrc: "/images/services/customizable-furniture-1.jpg",
-      title: "Office & House Furniture",
+      title: "Modern & Customize Furniture",
     },
   ];
 
@@ -35,19 +35,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-1.webp" alt="interior design" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">interior design</span>
+            <span className="font-bold text-lg text-gray-900">Architects Design</span>
           </div>
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-2.webp" alt="elevation design" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">elevation design</span>
+            <span className="font-bold text-lg text-gray-900">Elevation Design</span>
           </div>
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-3.webp" alt="bespoke furniture" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">bespoke furniture</span>
+            <span className="font-bold text-lg text-gray-900">Bespoke Furniture</span>
           </div>
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-4.webp" alt="decor" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">decor</span>
+            <span className="font-bold text-lg text-gray-900">Decor </span>
           </div>
         </div>
       </div>

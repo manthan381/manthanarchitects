@@ -1,58 +1,71 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 export default function AboutSection() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Heading + Text */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl sm:text-4xl text-gray-950 mb-6 font-bold">
-            Personalized Spaces with Purpose
-          </h2>
-          <p className="text-gray-900 text-lg leading-relaxed text-wrap text-justify">
-            Manthanarchitects is a comprehensive design and build partner, committed
-            to realizing your vision through a deep understanding of the unique
-            essence of each space. As an ISO 9001:2015 certified organization,
-            we offer end-to-end solutions encompassing architecture, interior
-            design, construction, and custom furniture manufacturing—all
-            seamlessly integrated under one roof. Our team transcends basic plan
-            execution, appreciating that every project reflects your aspirations
-            and objectives. Utilizing advanced AI-driven tools, we ensure
-            projects are delivered on schedule and within budget, while
-            maintaining exceptional focus on the nuanced design elements that
-            distinguish each space. Whether executing residential renovations,
-            office designs, or commercial developments, we uphold the highest
-            standards of professionalism and care. Selecting Space Manthan means
-            engaging a partner dedicated to creating authentic, purposeful
-            environments that align with your personality and operational needs,
-            realized with precision and passion.
-          </p>
-        </motion.div>
+  const shouldReduceMotion = useReducedMotion();
 
-        {/* Right: Image */}
+  const heroInitial = shouldReduceMotion ? false : { opacity: 0 };
+  const textInitial = shouldReduceMotion ? false : { opacity: 0, y: 20 };
+
+  return (
+    <>
+      <section className="relative w-full h-[calc(60vh-50px)] min-h-[500px] overflow-hidden bg-white">
         <motion.div
-          className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
+          className="absolute inset-0"
+          initial={heroInitial}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <Image
-            src="/images/bg/modern-office-space-1.png" // Replace with your image path
-            alt="About Bench Architects"
+            src="/images/bg/modern-office-space-1.png"
+            alt="About Manthan Architects"
             fill
+            priority
+            sizes="100vw"
             className="object-cover"
           />
         </motion.div>
-      </div>
-    </section>
+      </section>
+
+      <section className="w-full bg-white py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={textInitial}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h1 className="text-2xl sm:text-4xl font-medium text-gray-950 mb-12 text-center">
+              About Manthan Architects: Crafting Timeless Architecture Design
+            </h1>
+
+            <div className="space-y-6 text-left text-gray-900 text-lg leading-relaxed">
+              <p>
+                Established in 2009 by <strong>35-year-old</strong> visionary entrepreneur Prince Aryan, Manthan Design aims to become one of India's leading architectural firms, known for creating innovative, sustainable, and timeless spaces.
+              </p>
+
+              <p>
+                Having successfully completed over <strong>200 projects</strong> across India, the company envisions shaping the future of architecture by blending creativity, functionality, and modern design to enhance the way people live, work, and experience their surroundings.
+              </p>
+
+              <p>
+                As a multidisciplinary architectural firm, we offer integrated solutions across residential, commercial, institutional, hospitality, and interior design. By blending global design perspectives with local sensibilities, we deliver spaces that are timeless, functional, and meaningful.
+              </p>
+
+              <p>
+                What sets us apart is our ability to provide a complete one-stop solution for architecture, design, and project execution-from concept development and planning to interior detailing and project coordination-ensuring quality, innovation, and sustainability in every project.
+              </p>
+
+              <p>
+                Our design philosophy focuses on simplicity, elegance, and purposeful planning. We create clean, refined spaces that respond to the strengths and challenges of each site, while integrating sustainable strategies and modern technologies to deliver functional, responsible, and future-ready architecture.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

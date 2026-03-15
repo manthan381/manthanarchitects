@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Users2, Trophy } from "lucide-react";
+import { Building2, Trophy, Users2 } from "lucide-react";
 
 const stats = [
-  { icon: Trophy, label: "Years of Experience", value: "12+" },
-  { icon: Building2, label: "Projects Completed", value: "250+" },
+  { icon: Trophy, label: "Years of Experience", value: "15+" },
+  { icon: Building2, label: "Projects Completed", value: "1000+" },
   { icon: Users2, label: "Happy Clients", value: "190+" },
 ];
 
@@ -19,7 +19,7 @@ export function StatsSection() {
         <div className="grid sm:grid-cols-3 gap-8">
           {stats.map((stat, i) => (
             <motion.div
-              key={i}
+              key={stat.label}
               className="bg-white px-6 py-10 rounded-xl shadow border text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

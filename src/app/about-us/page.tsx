@@ -1,14 +1,9 @@
 import AboutSection from "@/components/shared/AboutSection";
-import BlogSection from "@/components/shared/BlogSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
-import ProjectsSection from "@/components/shared/ProjectsSection";
 import { StatsSection } from "@/components/shared/StatsSection";
 import { TeamSection } from "@/components/shared/TeamSection";
-import TrustedBy from "@/components/shared/TrustedBy";
-import { VisionMission } from "@/components/shared/VisionMission";
-import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,12 +11,17 @@ export default function Home() {
     <main>
       <Header />
       <AboutSection />
-      <TrustedBy />
       <StatsSection />
-      <div className="bg-gray-900 py-20">
-        <ProjectsSection />
-      </div>
-      <VisionMission />
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-5xl mx-auto text-left">
+          <h2 className="text-3xl sm:text-4xl text-gray-900 mb-6 text-center">
+            <span className="font-bold">Approch</span> Section
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            At Manthan Architects, every project begins with understanding the site, client vision, and environment. Our approach balances design aesthetics, functionality, and sustainability, ensuring spaces that are comfortable, efficient, and environmentally responsible. By working closely with clients, we transform ideas into meaningful, elegant, and practical architecture.
+          </p>
+        </div>
+      </section>
       <TeamSection />
       <div className="bg-gray-50 py-20 mx-auto">
         <div className="text-center">
@@ -42,13 +42,9 @@ export default function Home() {
             alt="Our 6 Steps Process"
             width={1500}
             height={800}
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover grayscale-[100%] contrast-105 group-hover:scale-105 transition-transform duration-500"
           />
         </div>
-      </div>
-      <WhyChooseUs />
-      <div className="bg-white py-20">
-        <BlogSection />
       </div>
       <ContactCTA />
       <Footer />
