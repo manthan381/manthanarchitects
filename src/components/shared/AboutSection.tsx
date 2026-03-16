@@ -20,7 +20,7 @@ export default function AboutSection() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <Image
-            src="/images/bg/modern-office-space-1.png"
+            src="/about-us-1.jpeg"
             alt="About Manthan Architects"
             fill
             priority
