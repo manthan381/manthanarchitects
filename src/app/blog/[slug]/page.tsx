@@ -1,28 +1,60 @@
 // app/blog/[slug]/page.tsx
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import Header from "@/components/shared/Header";
-import Footer from "@/components/shared/Footer";
+import ConsultationForm from "@/components/shared/ConsultationForm";
 import { ContactCTA } from "@/components/shared/ContactCTA";
-import { blogPosts } from "@/lib/blogData";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@/components/ui/select";
+import Footer from "@/components/shared/Footer";
+import Header from "@/components/shared/Header";
+import { getPublishedPostBySlug } from "@/lib/blog/repository";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export default async function BlogDetailPage({ params }: BlogPageProps) {
+export async function generateMetadata({
+  params,
+}: Readonly<BlogPageProps>): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPublishedPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  const title = post.metaTitle?.trim() || post.title;
+  const description = post.metaDesc?.trim() || post.excerpt;
+  const keywords = post.metaKeyword
+    ? post.metaKeyword
+        .split(",")
+        .map((keyword) => keyword.trim())
+        .filter(Boolean)
+    : undefined;
+
+  return {
+    title,
+    description,
+    keywords,
+  };
+}
+
+export default async function BlogDetailPage({
+  params,
+}: Readonly<BlogPageProps>) {
   const { slug } = await params;
 
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getPublishedPostBySlug(slug);
   if (!post) return notFound();
+
+  const publishedDate = post.publishedAt
+    ? new Date(post.publishedAt).toLocaleDateString("en-IN", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })
+    : null;
 
   return (
     <main>
@@ -36,13 +68,14 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
                 {post.title}
               </h1>
               <p className="text-sm text-gray-500 text-center">
-                By <strong>{post.author}</strong> • {post.date}
+                By <strong>{post.authorName}</strong>
+                {publishedDate ? ` • ${publishedDate}` : ""}
               </p>
             </header>
 
             <div className="relative w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden mb-10">
               <Image
-                src={post.image}
+                src={post.coverImage}
                 alt={post.title}
                 fill
                 className="object-cover"
@@ -50,7 +83,7 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
             </div>
 
             <article
-              className="prose dark:prose-invert prose-lg max-w-none"
+              className="blog-content max-w-none"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
@@ -60,25 +93,7 @@ export default async function BlogDetailPage({ params }: BlogPageProps) {
             <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
               Book Free Consultation
             </h2>
-            <form className="space-y-4">
-              <Input placeholder="Full Name" />
-              <Input placeholder="Company Name" />
-              <Input type="email" placeholder="Email" />
-              <Input type="tel" placeholder="Phone Number" />
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select Carpet Area" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="below-1000">Below 1000 sq.ft</SelectItem>
-                  <SelectItem value="1000-2500">1000 - 2500 sq.ft</SelectItem>
-                  <SelectItem value="above-2500">Above 2500 sq.ft</SelectItem>
-                </SelectContent>
-              </Select>
-              <Button type="submit" className="w-full">
-                Book Now
-              </Button>
-            </form>
+            <ConsultationForm />
           </aside>
         </div>
       </section>

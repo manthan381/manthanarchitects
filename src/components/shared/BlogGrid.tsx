@@ -1,60 +1,34 @@
-import Link from "next/link";
+import type { BlogPostPreview } from "@/lib/blog/types";
 import Image from "next/image";
+import Link from "next/link";
 
-type BlogPost = {
-  id: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  date: string;
-  author: string;
-  slug: string;
+type BlogGridProps = {
+  posts: BlogPostPreview[];
 };
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Top 10 Sustainable Architecture Trends in 2025",
-    excerpt:
-      "Discover how modern architecture embraces sustainability and green technology.",
-    image: "/images/blogs/blog-1.webp",
-    date: "June 15, 2025",
-    author: "Vivek Kumar",
-    slug: "sustainable-architecture-trends-2025",
-  },
-  {
-    id: "2",
-    title: "How Smart Homes are Changing Urban Living",
-    excerpt:
-      "Explore the rise of automation and smart living spaces in urban construction.",
-    image: "/images/blogs/blog-2.jpg",
-    date: "June 10, 2025",
-    author: "Neha Sharma",
-    slug: "smart-homes-are-changing-urban-living",
-  },
-  {
-    id: "3",
-    title: "Designing for Wellness: The New Trend in Office Spaces",
-    excerpt:
-      "Learn why biophilic design and ergonomics are at the forefront of workplace architecture.",
-    image: "/images/blogs/blog-3.jpg",
-    date: "June 5, 2025",
-    author: "Arjun Mehta",
-    slug: "new-trend-in-office-spaces",
-  },
-];
+function formatDate(date: string | null) {
+  if (!date) {
+    return "";
+  }
 
-export function BlogGrid() {
+  return new Date(date).toLocaleDateString("en-IN", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+export function BlogGrid({ posts }: Readonly<BlogGridProps>) {
   return (
     <section className="px-4 md:px-12 py-16">
       <div className="grid md:grid-cols-3 gap-10">
-        {blogPosts.map((post) => (
+        {posts.map((post) => (
           <div
             key={post.id}
             className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
           >
             <Image
-              src={post.image}
+              src={post.coverImage}
               alt={post.title}
               width={400}
               height={250}
@@ -66,7 +40,8 @@ export function BlogGrid() {
               </Link>
               <p className="text-gray-950 text-sm mb-4">{post.excerpt}</p>
               <div className="text-xs text-gray-900">
-                {post.author} • {post.date}
+                {post.authorName}
+                {post.publishedAt ? ` • ${formatDate(post.publishedAt)}` : ""}
               </div>
               <div className="py-1">
                 <Link

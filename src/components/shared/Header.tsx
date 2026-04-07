@@ -19,23 +19,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative z-50 w-full border border-b-gray-50 shadow-sm">
-      {/* Background effect */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white via-gray-50 to-gray-100 opacity-90">
-        <svg
-          className="absolute top-0 left-0 w-full h-full opacity-10"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <circle cx="50" cy="50" r="40" fill="url(#grad)" />
-          <defs>
-            <radialGradient id="grad">
-              <stop offset="0%" stopColor="#ffffff20" />
-              <stop offset="100%" stopColor="#00000000" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
+    <header className="absolute top-0 left-0 z-50 w-full bg-gradient-to-b from-black/70 via-black/20 to-transparent">
 
       <motion.div
         initial={{ y: -80, opacity: 0 }}
@@ -49,7 +33,7 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[#012169] hover:text-[#c8a96e] transition font-semibold text-sm"
+              className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
             >
               {link.name}
             </Link>
@@ -65,7 +49,7 @@ export default function Header() {
             height={36}
             className="object-contain"
           />
-          <span className="text-xl font-bold text-[#012169] tracking-wide">
+          <span className="text-xl font-bold text-white tracking-wide drop-shadow-md">
             Manthan Architects
           </span>
         </Link>
@@ -76,7 +60,7 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[#012169] hover:text-[#c8a96e] transition font-semibold text-sm"
+              className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
             >
               {link.name}
             </Link>
@@ -85,7 +69,7 @@ export default function Header() {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex justify-end">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-gray-900">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
             {isOpen ? <X size={24} color="white" /> : <Menu size={24} />}
           </button>
         </div>

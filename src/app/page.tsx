@@ -1,4 +1,3 @@
-"use client";
 import BlogSection from "@/components/shared/BlogSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import FeatureSection from "@/components/shared/FeatureSection";
@@ -10,8 +9,11 @@ import ProjectsSection from "@/components/shared/ProjectsSection";
 import ThreeColumnImages from "@/components/shared/ThreeColumnImages";
 import TrustedBy from "@/components/shared/TrustedBy";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
+import { getLatestPublishedPosts } from "@/lib/blog/repository";
 
-export default function Home() {
+export default async function Home() {
+  const latestPosts = await getLatestPublishedPosts(3);
+
   const data = [
     {
       imageSrc: "/images/projects/p1.png",
@@ -98,7 +100,7 @@ export default function Home() {
         <ThreeColumnImages heading="Our Core Services" columns={data} />
       </div>
       <div className="py-16 border-t-2 border-gray-100">
-        <BlogSection />
+        <BlogSection posts={latestPosts} />
       </div>
       <ContactCTA />
       <Footer />

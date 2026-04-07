@@ -1,34 +1,61 @@
 "use client";
 
+import type { BlogPostPreview } from "@/lib/blog/types";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-const blogs = [
+const defaultBlogs = [
   {
     title: "Top 10 Sustainable Architecture Trends in 2025",
-    summary:
+    excerpt:
       "Explore how open-plan concepts and minimalist architecture shape the way we live.",
-    image: "/images/blogs/blog-1.webp",
-    slug: "/blog/sustainable-architecture-trends-2025",
+    coverImage: "/images/blogs/blog-1.webp",
+    authorName: "Manthan Team",
+    publishedAt: "2025-06-15T00:00:00.000Z",
+    slug: "sustainable-architecture-trends-2025",
   },
   {
     title: "How Smart Homes are Changing Urban Living",
-    summary:
+    excerpt:
       "Discover emerging trends in office and retail space design that blend function and beauty.",
-    image: "/images/blogs/blog-2.jpg",
-    slug: "/blog/smart-homes-are-changing-urban-living",
+    coverImage: "/images/blogs/blog-2.jpg",
+    authorName: "Manthan Team",
+    publishedAt: "2025-06-10T00:00:00.000Z",
+    slug: "smart-homes-are-changing-urban-living",
   },
   {
     title: "Designing for Wellness: The New Trend in Office Spaces",
-    summary:
+    excerpt:
       "Learn about eco-friendly building materials that reduce impact while maximizing durability.",
-    image: "/images/blogs/blog-3.jpg",
-    slug: "/blog/new-trend-in-office-spaces",
+    coverImage: "/images/blogs/blog-3.jpg",
+    authorName: "Manthan Team",
+    publishedAt: "2025-06-05T00:00:00.000Z",
+    slug: "new-trend-in-office-spaces",
   },
 ];
 
-export default function BlogSection() {
+type BlogSectionProps = {
+  posts?: BlogPostPreview[];
+};
+
+function formatDate(date: string | null) {
+  if (!date) {
+    return "";
+  }
+
+  return new Date(date).toLocaleDateString("en-IN", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
+export default function BlogSection({
+  posts = [],
+}: Readonly<BlogSectionProps>) {
+  const blogs = posts.length > 0 ? posts : defaultBlogs;
+
   return (
     <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -57,18 +84,18 @@ export default function BlogSection() {
 
         {/* Blog Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog, i) => (
+          {blogs.map((blog) => (
             <motion.div
-              key={i}
+              key={blog.slug}
               className="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={blog.image}
+                  src={blog.coverImage}
                   alt={blog.title}
                   fill
                   className="object-cover"
@@ -78,9 +105,13 @@ export default function BlogSection() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {blog.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{blog.summary}</p>
+                <p className="text-gray-600 text-sm mb-4">{blog.excerpt}</p>
+                <p className="text-xs text-gray-500 mb-3">
+                  {blog.authorName}
+                  {blog.publishedAt ? ` • ${formatDate(blog.publishedAt)}` : ""}
+                </p>
                 <Link
-                  href={blog.slug}
+                  href={`/blog/${blog.slug}`}
                   className="text-primary hover:underline text-sm font-medium"
                 >
                   Read More →
