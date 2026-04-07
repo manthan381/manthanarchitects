@@ -25,12 +25,15 @@ export default function ElevationDesignPage() {
     <main>
       <Header />
 
-      <section className="relative w-full h-[calc(60vh-50px)] min-h-[500px] overflow-hidden bg-white">
+      <section className="relative w-full h-[60vh] min-h-[500px] overflow-hidden bg-white">
         <motion.div
           className="absolute inset-0"
-          initial={heroInitial}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          whileInView={{ opacity: 1, scale: 1.15 }}
+          transition={{ 
+            opacity: { duration: 0.8 },
+            scale: { duration: 6, ease: "easeOut" }
+          }}
           viewport={{ once: true, amount: 0.2 }}
         >
           <Image

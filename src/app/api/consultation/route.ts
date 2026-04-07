@@ -11,19 +11,34 @@ export async function POST(req: Request) {
   }
 
   try {
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = Number(process.env.SMTP_PORT ?? "465");
+    const smtpSecure = (process.env.SMTP_SECURE ?? "true") === "true";
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const smtpFrom = process.env.SMTP_FROM ?? smtpUser;
+    const smtpTo = process.env.SMTP_TO ?? smtpUser;
+
+    if (!smtpHost || !smtpUser || !smtpPass || !smtpFrom || !smtpTo) {
+      return NextResponse.json(
+        { success: false, error: "SMTP is not configured" },
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
-      host: "smtp.yourhost.com",
-      port: 465,
-      secure: true,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
       auth: {
-        user: "your@email.com",
-        pass: "yourpassword",
+        user: smtpUser,
+        pass: smtpPass,
       },
     });
 
     await transporter.sendMail({
-      from: `"Space Manthan" <your@email.com>`,
-      to: "your@email.com",
+      from: smtpFrom,
+      to: smtpTo,
       subject: "New Consultation Booking",
       html: `
         <h3>New Consultation Booking</h3>

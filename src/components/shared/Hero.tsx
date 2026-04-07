@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
+  "/images/home/hero-image-1.webp",
   "/images/home/hero-image-2.webp",
   "/images/home/hero-image-3.webp",
   "/images/home/hero-image-4.webp",
@@ -25,7 +26,7 @@ export default function Hero() {
     intervalRef.current = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 4000);
   };
 
   useEffect(() => {
@@ -45,23 +46,25 @@ export default function Hero() {
   };
 
   const variants = {
-    enter: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%" }),
-    center: { x: 0 },
-    exit: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%" }),
+    enter: { opacity: 0, scale: 1.1 },
+    center: { opacity: 1, scale: 1.2 },
+    exit: { opacity: 0, scale: 1.1 },
   };
 
   return (
-    <section className="relative w-full h-[calc(100vh-80px)] min-h-[500px] overflow-hidden">
+    <section className="relative w-full h-screen min-h-[500px] overflow-hidden">
       {/* Sliding Images */}
       <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
           key={currentIndex}
-          custom={direction}
           variants={variants}
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{
+            opacity: { duration: 0.8, ease: "easeInOut" },
+            scale: { duration: 4.5, ease: "linear" },
+          }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${images[currentIndex]}')` }}
         />
