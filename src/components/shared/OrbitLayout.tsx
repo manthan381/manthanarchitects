@@ -58,9 +58,11 @@ export default function OrbitLayout() {
   //const offset = orbitRadius - imageSize / 2;
 
   return (
-    <div className="relative w-full h-[800px] flex items-center justify-center overflow-hidden">
-      {/* Center logo */}
-      <div className="absolute z-10 text-center">
+    <div className="relative w-full h-[500px] sm:h-[600px] md:h-[800px] flex items-center justify-center overflow-hidden">
+      {/* Scale wrapper for mobile responsiveness */}
+      <div className="relative flex items-center justify-center scale-[0.45] sm:scale-[0.65] md:scale-100">
+        {/* Center logo */}
+        <div className="absolute z-10 text-center">
         <Image
           src="/logoo.jpeg"
           alt="Manthanarchitects"
@@ -108,6 +110,7 @@ export default function OrbitLayout() {
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

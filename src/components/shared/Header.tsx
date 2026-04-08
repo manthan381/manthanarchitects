@@ -25,53 +25,59 @@ export default function Header() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-3 items-center"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative"
       >
         {/* Left Nav */}
-        <nav className="hidden md:flex space-x-6">
-          {navLinks.slice(0, 3).map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Center Logo + Name */}
-        <Link href="/" className="flex items-center justify-center gap-2">
-          <Image
-            src="/logoo.jpeg"
-            alt="Manthan Architects"
-            width={36}
-            height={36}
-            className="object-contain"
-          />
-          <span className="text-xl font-bold text-white tracking-wide drop-shadow-md">
-            Manthan Architects
-          </span>
-        </Link>
-
-        {/* Right Nav */}
-        <div className="hidden md:flex items-center justify-end space-x-6">
-          {navLinks.slice(3).map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="flex-1 flex justify-start">
+          <nav className="hidden md:flex space-x-6">
+            {navLinks.slice(0, 3).map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex justify-end">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-            {isOpen ? <X size={24} color="white" /> : <Menu size={24} />}
-          </button>
+        {/* Center Logo + Name */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex justify-center w-full max-w-fit">
+          <Link href="/" className="flex items-center justify-center gap-2 whitespace-nowrap">
+            <Image
+              src="/logoo.jpeg"
+              alt="Manthan Architects"
+              width={34}
+              height={34}
+              className="object-contain rounded-md"
+            />
+            <span className="text-[15px] sm:text-lg md:text-xl font-bold text-white tracking-wide drop-shadow-md">
+              Manthan Architects
+            </span>
+          </Link>
+        </div>
+
+        {/* Right Nav */}
+        <div className="flex-1 flex justify-end items-center">
+          <div className="hidden md:flex items-center justify-end space-x-6">
+            {navLinks.slice(3).map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex justify-end">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2 -mr-2">
+              {isOpen ? <X size={26} color="white" /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
       </motion.div>
 

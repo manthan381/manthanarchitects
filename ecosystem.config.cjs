@@ -4,7 +4,7 @@ module.exports = {
       name: "manthan-next",
       cwd: __dirname,
       script: "npm",
-      args: "run start:prod",
+      args: "start",
       instances: 1,
       exec_mode: "fork",
       autorestart: true,
@@ -13,7 +13,7 @@ module.exports = {
       env_file: ".env",
       env: {
         NODE_ENV: "production",
-        PORT: "3000",
+        PORT: "3001",
       },
     },
   ],
