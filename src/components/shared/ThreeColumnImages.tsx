@@ -25,7 +25,7 @@ export default function ThreeColumnImages({
         
         {/* Heading */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 tracking-tight"
+          className="text-3xl md:text-5xl font-bold mb-16 text-gray-900 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -52,7 +52,7 @@ export default function ThreeColumnImages({
                 {/* Decorative Ring */}
                 <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110 group-hover:scale-125 transition-transform duration-700" />
                 
-                <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:shadow-primary/20 transition-all duration-500">
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] group-hover:shadow-primary/20 transition-all duration-500">
                   <Image
                     src={col.imageSrc}
                     alt={col.title}

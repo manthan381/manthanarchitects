@@ -14,7 +14,7 @@ export default function FeatureSection() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h2 className="text-4xl md:text-4xl text-gray-950 tracking-tighter">
+          <h2 className="text-3xl md:text-4xl text-gray-950 tracking-tighter">
             Why Choose <span className="font-bold text-gray-900">Manthan Architects</span>
           </h2>
         </motion.div>
@@ -50,7 +50,7 @@ export default function FeatureSection() {
       {/* Presence Section */}
       <div className="bg-[#f8f9fa] mt-10 py-16 pb-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-light text-gray-800 mb-2 text-center">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-2 text-center">
             Presence
           </h2>
           <div className="w-16 h-[1px] bg-gray-400 mx-auto mb-12" />
@@ -64,7 +64,7 @@ export default function FeatureSection() {
               viewport={{ once: true }}
               className="bg-white py-8 px-6 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
             >
-              <h3 className="text-4xl font-light text-gray-900 mb-6 tracking-wide">15+</h3>
+              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 tracking-wide">15+</h3>
               <div className="w-12 h-[1px] bg-gray-200 mb-6" />
               <p className="text-sm text-gray-500 font-light tracking-wide">years of experience</p>
             </motion.div>
@@ -77,7 +77,7 @@ export default function FeatureSection() {
               viewport={{ once: true }}
               className="bg-white py-8 px-6 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
             >
-              <h3 className="text-4xl font-light text-gray-900 mb-6 tracking-wide">1,000+</h3>
+              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 tracking-wide">1,000+</h3>
               <div className="w-12 h-[1px] bg-gray-200 mb-6" />
               <p className="text-sm text-gray-500 font-light tracking-wide">projects globally</p>
             </motion.div>
@@ -90,7 +90,7 @@ export default function FeatureSection() {
               viewport={{ once: true }}
               className="bg-white py-8 px-6 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
             >
-              <h3 className="text-4xl font-light text-gray-900 mb-6 tracking-wide">150+</h3>
+              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 tracking-wide">150+</h3>
               <div className="w-12 h-[1px] bg-gray-200 mb-6" />
               <p className="text-sm text-gray-500 font-light tracking-wide">team members</p>
             </motion.div>

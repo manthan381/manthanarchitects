@@ -10,6 +10,17 @@ import ThreeColumnImages from "@/components/shared/ThreeColumnImages";
 import TrustedBy from "@/components/shared/TrustedBy";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
 import { getLatestPublishedPosts } from "@/lib/blog/repository";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Manthan Architects — Best Architecture & Interior Design Firm in Gurugram",
+  description:
+    "Transform your vision into reality with Manthan Architects — award-winning architecture, interior design, and elevation solutions across Gurugram, Delhi NCR, and India.",
+  keywords: "architecture firm Gurugram, interior design Gurugram, best architects in Gurugram, architectural design services India, home interior designers Gurgaon, Manthan Architects, elevation design Gurugram, luxury home design Delhi NCR, commercial interior design, residential architecture India",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function Home() {
   const latestPosts = await getLatestPublishedPosts(3);
