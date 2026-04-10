@@ -25,14 +25,14 @@ export default function ElevationDesignPage() {
     <main>
       <Header />
 
-      <section className="relative w-full h-[60vh] min-h-[500px] overflow-hidden bg-white">
+      <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden bg-white">
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.05 }}
-          whileInView={{ opacity: 1, scale: 1.15 }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1.0 }}
           transition={{ 
-            opacity: { duration: 0.8 },
-            scale: { duration: 6, ease: "easeOut" }
+            opacity: { duration: 0.3, ease: "easeInOut" },
+            scale: { duration: 1.0, ease: "easeOut" }
           }}
           viewport={{ once: true, amount: 0.2 }}
         >
@@ -47,7 +47,7 @@ export default function ElevationDesignPage() {
         </motion.div>
       </section>
 
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-white pt-12 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={textInitial}
@@ -55,7 +55,7 @@ export default function ElevationDesignPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <h1 className="text-2xl sm:text-4xl font-medium text-gray-950 mb-12 text-center leading-tight">
+            <h1 className="text-2xl sm:text-4xl font-medium text-gray-950 mb-8 text-center leading-tight">
               Stunning Elevation Designs: Enhancing Architectural Beauty
             </h1>
 
@@ -79,7 +79,16 @@ export default function ElevationDesignPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-              <div className="relative w-full h-[260px] sm:h-[320px] md:h-[360px] rounded-lg overflow-hidden">
+              <motion.div 
+                className="relative w-full h-[260px] sm:h-[320px] md:h-[360px] rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 1.1 }}
+                whileInView={{ opacity: 1, scale: 1.0 }}
+                transition={{ 
+                  opacity: { duration: 0.3, ease: "easeInOut" },
+                  scale: { duration: 1.0, ease: "easeOut" }
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+              >
                 <Image
                   src="/elevation-3.jpeg"
                   alt="Modern elevation design view 1"
@@ -87,8 +96,17 @@ export default function ElevationDesignPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-              </div>
-              <div className="relative w-full h-[260px] sm:h-[320px] md:h-[360px] rounded-lg overflow-hidden">
+              </motion.div>
+              <motion.div 
+                className="relative w-full h-[260px] sm:h-[320px] md:h-[360px] rounded-lg overflow-hidden"
+                initial={{ opacity: 0, scale: 1.1 }}
+                whileInView={{ opacity: 1, scale: 1.0 }}
+                transition={{ 
+                  opacity: { duration: 0.3, ease: "easeInOut" },
+                  scale: { duration: 1.0, ease: "easeOut" }
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+              >
                 <Image
                   src="/elevation-4.jpeg"
                   alt="Modern elevation design view 2"
@@ -96,7 +114,7 @@ export default function ElevationDesignPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="mt-10 flex justify-center">

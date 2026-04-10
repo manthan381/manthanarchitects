@@ -25,14 +25,14 @@ export default function ArchitecturePage() {
     <main>
       <Header />
 
-      <section className="relative w-full h-[60vh] min-h-[500px] overflow-hidden bg-white">
+      <section className="relative w-full aspect-[1280/853] md:max-h-[85vh] overflow-hidden bg-white">
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.05 }}
-          whileInView={{ opacity: 1, scale: 1.15 }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1.0 }}
           transition={{ 
-            opacity: { duration: 0.8 },
-            scale: { duration: 6, ease: "easeOut" }
+            opacity: { duration: 0.3, ease: "easeInOut" },
+            scale: { duration: 1.0, ease: "easeOut" }
           }}
           viewport={{ once: true, amount: 0.2 }}
         >
@@ -47,7 +47,7 @@ export default function ArchitecturePage() {
         </motion.div>
       </section>
 
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-white pt-12 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={textInitial}
@@ -55,7 +55,7 @@ export default function ArchitecturePage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <h1 className="text-2xl sm:text-4xl font-medium text-gray-950 mb-12 text-center leading-tight">
+            <h1 className="text-2xl sm:text-4xl font-medium text-gray-950 mb-8 text-center leading-tight">
               Exquisite Architectural Design: Creating Elegant &amp; Functional Spaces
             </h1>
 

@@ -25,55 +25,64 @@ export default function Header() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between relative"
+        className="max-w-[1600px] w-full mx-auto pl-6 pr-10 sm:pl-10 sm:pr-16 lg:pl-14 lg:pr-24 py-4 flex items-center justify-between"
       >
-        {/* Left Nav */}
-        <div className="flex-1 flex justify-start">
-          <nav className="hidden md:flex space-x-6">
-            {navLinks.slice(0, 3).map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        {/* Center Logo + Name */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex justify-center w-full max-w-fit">
-          <Link href="/" className="flex items-center justify-center gap-2 whitespace-nowrap">
+        {/* Left Side: Logo + Name */}
+        <div className="flex items-center">
+          <Link href="/" className="group flex items-center gap-0 whitespace-nowrap">
             <Image
-              src="/logoo.jpeg"
-              alt="Manthan Architects"
-              width={34}
-              height={34}
-              className="object-contain rounded-md"
+              src="/manthan-logo.png"
+              alt="manthan architects"
+              width={130}
+              height={130}
+              unoptimized
+              className="object-contain"
+              style={{ mixBlendMode: 'multiply' }}
             />
-            <span className="text-[15px] sm:text-lg md:text-xl font-bold text-white tracking-wide drop-shadow-md">
-              Manthan Architects
+            <span className="text-[19px] sm:text-2xl md:text-3xl font-bold text-white tracking-wide drop-shadow-md lowercase -ml-12 transition-colors duration-300 group-hover:text-[#eb5e22]">
+              manthan architects
             </span>
           </Link>
         </div>
 
-        {/* Right Nav */}
-        <div className="flex-1 flex justify-end items-center">
-          <div className="hidden md:flex items-center justify-end space-x-6">
-            {navLinks.slice(3).map((link) => (
+        {/* Right Side: Navigation Links & Mobile Toggle */}
+        <div className="flex items-center gap-8">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-[#c8a96e] transition font-semibold text-sm drop-shadow-md"
+                className="group relative text-white hover:text-[#eb5e22] transition-all duration-500 text-lg drop-shadow-md whitespace-nowrap lowercase flex flex-col items-center justify-center h-8"
               >
-                {link.name}
+                {/* Rolling Text Container */}
+                <div className="relative overflow-hidden h-7 w-full flex items-center justify-center">
+                  {/* Spacer to reserve maximum width and prevent layout shift */}
+                  <span className="invisible font-black" aria-hidden="true">
+                    {link.name}
+                  </span>
+
+                  {/* Sliding Wrapper */}
+                  <div className="absolute inset-0 flex flex-col transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                    {/* Original Text (Normal) */}
+                    <span className="flex h-full items-center justify-center font-normal">
+                      {link.name}
+                    </span>
+                    {/* Replacement Text (Bold + Brand Color) */}
+                    <span className="flex h-full items-center justify-center font-black text-[#eb5e22]">
+                      {link.name}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Animated Underline */}
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#eb5e22] transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-          </div>
+          </nav>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex justify-end">
+          <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2 -mr-2">
               {isOpen ? <X size={26} color="white" /> : <Menu size={26} />}
             </button>

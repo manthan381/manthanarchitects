@@ -31,7 +31,7 @@ const services = [
 export default function WhatWeDoSection() {
   return (
     <section className="pt-10 pb-8 bg-[#dff1e0] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24">
 
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -39,7 +39,7 @@ export default function WhatWeDoSection() {
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-2 block"
+              className="text-primary font-bold tracking-[0.2em] text-sm mb-2 block"
             >
               Our Expertise
             </motion.span>

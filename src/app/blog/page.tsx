@@ -7,9 +7,9 @@ import { getPublishedPosts } from "@/lib/blog/repository";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Architecture & Design Insights — Blog | Manthan Architects",
+  title: "Insights on Architecture, Design & Construction | Manthan Architects Blog",
   description:
-    "Read expert insights on architecture, interior design, elevation trends, and project management from the team at Manthan Architects.",
+    "Read the latest architecture blogs, interior design ideas, and construction insights from Manthan Architects. Stay updated with modern design trends and expert tips.",
   keywords: "architecture blog India, interior design tips, elevation design ideas, home design trends, architecture insights Gurugram, interior design blog, modern home design ideas, architecture news India, design inspiration India",
   alternates: {
     canonical: "/blog",
@@ -22,7 +22,7 @@ export default async function Blog() {
   return (
     <main>
       <Header />
-      <section className="mx-auto max-w-7xl py-20">
+      <section className="mx-auto max-w-7xl pt-30 pb-12">
         <BlogHero />
         <BlogGrid posts={posts} />
       </section>
