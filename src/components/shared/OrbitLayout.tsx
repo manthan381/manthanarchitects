@@ -17,7 +17,7 @@ const orbitItems = [
   {
     image: "/images/orbit/9.png",
     label: "RESIDENTIAL",
-    link: "projects?category=Modern+Villa",
+    link: "/projects?category=Modern+Villa",
   },
   {
     image: "/images/orbit/8.png",
@@ -47,32 +47,31 @@ const orbitItems = [
   {
     image: "/images/orbit/2.png",
     label: "HOTEL",
-    link: "/projects?category=Hotel",
+    link: "/projects?category=Hotel+and+Resort",
   },
 ];
 
 export default function OrbitLayout() {
-  //const orbitRadius = 350;
   const imageSize = 120;
   const offset = 300;
-  //const offset = orbitRadius - imageSize / 2;
 
   return (
     <div className="relative w-full h-[500px] sm:h-[600px] md:h-[800px] flex items-center justify-center overflow-hidden">
       {/* Scale wrapper for mobile responsiveness */}
       <div className="relative flex items-center justify-center scale-[0.45] sm:scale-[0.65] md:scale-100">
         {/* Center logo */}
-        <div className="absolute z-10 text-center">
+        <div className="absolute z-30 text-center pointer-events-none">
+          <div className="h-36 w-36 rounded-full bg-white shadow-lg ring-4 ring-white/70 flex items-center justify-center">
           <Image
             src="/logoo.jpeg"
             alt="Manthanarchitects"
-            width={120}
-            height={120}
+            width={88}
+            height={88}
             unoptimized
-            className="mx-auto"
-            style={{ mixBlendMode: 'multiply' }}
-            objectFit="cover"
+            className="mx-auto object-contain"
+            priority
           />
+          </div>
         </div>
 
         {/* Orbit rings */}
@@ -86,7 +85,7 @@ export default function OrbitLayout() {
             const angle = (360 / orbitItems.length) * index;
             return (
               <div
-                key={index}
+                key={item.label}
                 className="absolute left-[40%] top-[40%]"
                 style={{
                   transform: `rotate(${angle}deg) translate(${offset}px) rotate(-${angle}deg)`,

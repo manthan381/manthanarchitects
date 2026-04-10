@@ -11,39 +11,41 @@ export default function ClientProjectGallery({
   images,
   title,
   coverImage,
-}: {
+}: Readonly<{
   images: string[];
   title: string;
   coverImage: string;
-}) {
+}>) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  // Combine coverImage with other images if not already included
-  const allImages = images.includes(coverImage)
+  const mergedImages = images.includes(coverImage)
     ? images
     : [coverImage, ...images];
+  const allImages = Array.from(new Set(mergedImages));
 
   return (
     <>
       <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
-        {allImages.map((img, i) => (
-          <div
-            key={i}
-            className="cursor-pointer"
+        {allImages.map((img, imageIndex) => (
+          <button
+            key={img}
+            type="button"
+            className="cursor-pointer text-left"
             onClick={() => {
-              setIndex(i);
+              setIndex(imageIndex);
               setOpen(true);
             }}
           >
             <Image
               src={img}
-              alt={`${title} ${i + 1}`}
+              alt={`${title} ${imageIndex + 1}`}
               width={600}
               height={400}
+              unoptimized
               className="rounded-lg object-cover w-full h-72"
             />
-          </div>
+          </button>
         ))}
       </div>
 

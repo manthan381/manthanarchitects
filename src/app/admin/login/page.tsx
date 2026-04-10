@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-[10s] scale-105"
         style={{ 
-          backgroundImage: "url('/images/home/hero-image-12.jpeg')",
+          backgroundImage: "url('/images/home/hero-image-1.webp')",
           filter: "brightness(0.4) blur(3px)" 
         }}
       />
@@ -74,7 +74,7 @@ export default function AdminLoginPage() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Username Input */}
             <div className="space-y-2">
-              <label className="block text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
+              <label htmlFor="admin-username" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
                 Username
               </label>
               <div className="relative group">
@@ -82,6 +82,7 @@ export default function AdminLoginPage() {
                   <User size={18} />
                 </div>
                 <input
+                  id="admin-username"
                   value={username}
                   onChange={(event) => setUsername(event.target.value)}
                   className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:bg-white/10 transition-all"
@@ -95,7 +96,7 @@ export default function AdminLoginPage() {
 
             {/* Password Input */}
             <div className="space-y-2">
-              <label className="block text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
+              <label htmlFor="admin-password" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider ml-1">
                 Password
               </label>
               <div className="relative group">
@@ -103,6 +104,7 @@ export default function AdminLoginPage() {
                   <Lock size={18} />
                 </div>
                 <input
+                  id="admin-password"
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}

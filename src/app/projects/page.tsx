@@ -115,6 +115,7 @@ export default function ProjectsPage() {
                   alt={project.title}
                   width={400}
                   height={250}
+                  unoptimized
                   className="w-full h-64 object-cover group-hover:scale-105 transition"
                 />
                 <div className="p-4">
