@@ -13,9 +13,9 @@ import { getLatestPublishedPosts } from "@/lib/blog/repository";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manthan Architects — Best Architecture & Interior Design Firm in Gurugram",
+  title: "Manthan Architects – Best Architecture & Interior Design Firm in Gurugram",
   description:
-    "Transform your vision into reality with Manthan Architects — award-winning architecture, interior design, and elevation solutions across Gurugram, Delhi NCR, and India.",
+    "Transform your vision into reality with Manthan Architects - award-winning architecture, interior design, and elevation solutions across Gurugram, Delhi NCR, and India.",
   keywords: "architecture firm Gurugram, interior design Gurugram, best architects in Gurugram, architectural design services India, home interior designers Gurgaon, Manthan Architects, elevation design Gurugram, luxury home design Delhi NCR, commercial interior design, residential architecture India",
   alternates: {
     canonical: "/",
@@ -28,54 +28,54 @@ export default async function Home() {
   const data = [
     {
       imageSrc: "/images/projects/p1.png",
-      title: `Architecture & Design`,
+      title: `architecture & design`,
     },
     {
       imageSrc: "/images/projects/p2.png",
-      title: "Office Design & Build",
+      title: "office design & build",
     },
     {
       imageSrc: "/images/services/customizable-furniture-1.jpg",
-      title: "Modern & Customize Furniture",
+      title: "modern & customize furniture",
     },
   ];
 
   return (
-    <main>
+    <main className="lowercase">
       <Header />
       <Hero />
-      <div className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
+      <div className="bg-white py-16">
+        <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-1.webp" alt="interior design" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">Architects Design</span>
+            <span className="font-bold text-lg text-gray-900">architects design</span>
           </div>
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-2.webp" alt="elevation design" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">Elevation Design</span>
+            <span className="font-bold text-lg text-gray-900">elevation design</span>
           </div>
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-3.webp" alt="bespoke furniture" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">Bespoke Furniture</span>
+            <span className="font-bold text-lg text-gray-900">bespoke furniture</span>
           </div>
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-4.webp" alt="decor" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">Decor </span>
+            <span className="font-bold text-lg text-gray-900">decor</span>
           </div>
         </div>
       </div>
 
-      <div className="bg-white py-8 px-4">
-        <div className="max-w-[1000px] mx-auto text-center space-y-8">
-          <h1 className="text-3xl md:text-4xl font-light text-gray-800 leading-tight">
-            Manthan Architects – Thoughtful Architecture & Inspired Spaces
+      <div className="bg-white py-12 px-6 sm:px-10 lg:px-24">
+        <div className="max-w-[1600px] w-full mx-auto space-y-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight text-center">
+            manthan architects – thoughtful architecture & inspired spaces
           </h1>
-          <div className="space-y-6 text-gray-500 leading-relaxed font-light">
+          <div className="space-y-6 text-gray-500 leading-relaxed font-light text-left">
             <p>
-              Manthan Architects reimagines modern architecture with creativity, precision, and purpose. As a forward-thinking architectural design firm, we transform ideas into meaningful built environments that blend aesthetics, functionality, and sustainability. From the initial concept to the final structure, our approach ensures that every detail reflects thoughtful design and strong architectural integrity.
+              manthan architects reimagines modern architecture with creativity, precision, and purpose. as a forward-thinking architectural design firm, we transform ideas into meaningful built environments that blend aesthetics, functionality, and sustainability. from the initial concept to the final structure, our approach ensures that every detail reflects thoughtful design and strong architectural integrity.
             </p>
             <p>
-              We believe that every space should tell a story and respond to the needs of the people who use it. At Manthan Architects, we specialize in designing residential, commercial, and institutional spaces that balance visual appeal with practical usability. Whether it is a contemporary architectural style or a timeless design language, our team carefully crafts spaces that inspire and perform.
+              we believe that every space should tell a story and respond to the needs of the people who use it. at manthan architects, we specialize in designing residential, commercial, and institutional spaces that balance visual appeal with practical usability. whether it is a contemporary architectural style or a timeless design language, our team carefully crafts spaces that inspire and perform.
             </p>
           </div>
         </div>
@@ -97,9 +97,9 @@ export default async function Home() {
         <WhatWeDoSection />
       </div>
       <div className="border-b-2 bg-gray-50">
-        <div className="max-w-7xl mx-auto pt-4 pb-10">
-          <h3 className="text-4xl text-center pb-8">
-            We make it <span className="font-bold">for everyone</span>
+        <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 pt-16 pb-20">
+          <h3 className="text-4xl text-center pb-8 font-bold">
+            we make it <span>for everyone</span>
           </h3>
           <OrbitLayout />
         </div>
@@ -108,7 +108,7 @@ export default async function Home() {
         <ProjectsSection />
       </div>
       <div className="bg-[#dff1e0]/50 py-4">
-        <ThreeColumnImages heading="Our Core Services" columns={data} />
+        <ThreeColumnImages heading="our core services" columns={data} />
       </div>
       <div className="py-16 border-t-2 border-gray-100">
         <BlogSection posts={latestPosts} />

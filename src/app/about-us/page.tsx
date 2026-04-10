@@ -1,21 +1,15 @@
+"use client";
+
 import AboutSection from "@/components/shared/AboutSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
+import { MissionVisionSection } from "@/components/shared/MissionVisionSection";
 import { StatsSection } from "@/components/shared/StatsSection";
+import { AboutServicesSection } from "@/components/shared/AboutServicesSection";
 import { TeamSection } from "@/components/shared/TeamSection";
 import Image from "next/image";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Manthan Architects in Gurugram | Architecture & Interior Design",
-  description:
-    "Looking for expert architects in Gurugram? Manthan Architects offers integrated design and project execution. Explore our 1,000+ completed projects and book a consultation.",
-  keywords: "about Manthan Architects, architects in Gurugram, architecture firm India, interior design company Gurgaon, best architects Gurugram, award winning architecture India, architectural firm Delhi NCR, Manthan Dezin Studio",
-  alternates: {
-    canonical: "/about-us",
-  },
-};
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -23,21 +17,13 @@ export default function Home() {
       <Header />
       <AboutSection />
       <StatsSection />
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-5xl mx-auto text-left">
-          <h2 className="text-3xl sm:text-4xl text-gray-900 mb-6 text-center">
-            <span className="font-bold">Approch</span> Section
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            At Manthan Architects, every project begins with understanding the site, client vision, and environment. Our approach balances design aesthetics, functionality, and sustainability, ensuring spaces that are comfortable, efficient, and environmentally responsible. By working closely with clients, we transform ideas into meaningful, elegant, and practical architecture.
-          </p>
-        </div>
-      </section>
+      <MissionVisionSection />
+      <AboutServicesSection />
       <TeamSection />
       <div className="bg-gray-50 py-20 mx-auto">
         <div className="text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-4xl text-gray-900 mb-6">
+            <h1 className="text-4xl font-bold text-black mb-6">
               Our <span className="font-bold">6 Step Process</span>
             </h1>
             <p className="text-lg text-gray-900 leading-relaxed pb-5">
@@ -47,14 +33,25 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center max-w-5xl mx-auto">
-          <Image
-            src="/images/process-steps.png"
-            alt="Our 6 Steps Process"
-            width={1500}
-            height={800}
-            className="object-cover grayscale-[100%] contrast-105 group-hover:scale-105 transition-transform duration-500"
-          />
+        <div className="flex items-center justify-center max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            whileInView={{ opacity: 1, scale: 1.0 }}
+            transition={{ 
+              opacity: { duration: 0.3, ease: "easeInOut" },
+              scale: { duration: 1.0, ease: "easeOut" }
+            }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="w-full rounded-2xl overflow-hidden"
+          >
+            <Image
+              src="/images/process-steps.png"
+              alt="Our 6 Steps Process"
+              width={1500}
+              height={800}
+              className="object-cover grayscale-[100%] contrast-105"
+            />
+          </motion.div>
         </div>
       </div>
       <ContactCTA />

@@ -47,7 +47,7 @@ const projects = [
 export default function ProjectsSection() {
   return (
     <section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -81,11 +81,10 @@ export default function ProjectsSection() {
           {chunkProjects(projects).map((chunk, i) => (
             <div
               key={i}
-              className={`grid gap-3 ${
-                i % 2 === 0
+              className={`grid gap-3 ${i % 2 === 0
                   ? "grid-cols-1 sm:grid-cols-2" // 2-column layout
                   : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" // 3-column layout
-              }`}
+                }`}
             >
               {chunk.map((project, index) => (
                 <motion.div

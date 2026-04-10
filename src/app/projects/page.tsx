@@ -1,13 +1,13 @@
 // src/app/projects/page.tsx
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import { projects, ProjectCategory } from "@/lib/projectData";
-import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import Header from "@/components/shared/Header";
+import { ProjectCategory, projects } from "@/lib/projectData";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 
 // List of categories with "All"
 const categories: (ProjectCategory | "All")[] = [
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
     <>
       <Header />
 
-      <main className="px-6 py-10 max-w-7xl mx-auto">
+      <main className="px-6 pt-24 pb-12 max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">Our Projects</h1>
 
         {/* Category Tabs */}
@@ -77,11 +77,10 @@ export default function ProjectsPage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm transition ${
-                selectedCategory === category
-                  ? "bg-[#273027] text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
+                ? "bg-[#273027] text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
             >
               {category}
             </button>

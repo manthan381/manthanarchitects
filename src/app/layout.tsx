@@ -60,7 +60,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${centuryGothic.className} antialiased`} suppressHydrationWarning>
+      <body className={`${centuryGothic.className} antialiased lowercase`} suppressHydrationWarning>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K2G79DZ4"

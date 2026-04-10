@@ -28,9 +28,9 @@ export async function generateMetadata({
   const description = post.metaDesc?.trim() || post.excerpt;
   const keywords = post.metaKeyword
     ? post.metaKeyword
-        .split(",")
-        .map((keyword) => keyword.trim())
-        .filter(Boolean)
+      .split(",")
+      .map((keyword) => keyword.trim())
+      .filter(Boolean)
     : undefined;
 
   return {
@@ -50,16 +50,16 @@ export default async function BlogDetailPage({
 
   const publishedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString("en-IN", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      })
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    })
     : null;
 
   return (
     <main>
       <Header />
-      <section className="max-w-7xl mx-auto px-4 py-16">
+      <section className="max-w-7xl mx-auto px-4 pt-24 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Main Content */}
           <div className="lg:col-span-2">

@@ -171,8 +171,8 @@ export default function RichTextEditor({
   }
 
   return (
-    <div className="md:col-span-2">
-      <div className="flex flex-wrap items-center gap-1 rounded-t-lg border border-b-0 bg-[#e8d9bb] p-2">
+    <div className="md:col-span-2 relative">
+      <div className="sticky top-16 z-20 flex flex-wrap items-center gap-1 rounded-t-lg border border-b-0 bg-[#e8d9bb] p-2 shadow-sm">
         <select
           value={currentEditor.getAttributes("textStyle").fontSize || "16px"}
           onChange={(event) =>
@@ -306,7 +306,6 @@ export default function RichTextEditor({
         <span className="mx-1 h-6 w-px bg-gray-400" />
         <button type="button" onClick={() => currentEditor.chain().focus().undo().run()} className={toolbarBtnClasses()}><Undo2 className="h-4 w-4" /></button>
         <button type="button" onClick={() => currentEditor.chain().focus().redo().run()} className={toolbarBtnClasses()}><Redo2 className="h-4 w-4" /></button>
-        <button type="button" onClick={() => currentEditor.chain().focus().unsetAllMarks().clearNodes().run()} className={toolbarBtnClasses()}><RemoveFormatting className="h-4 w-4" /></button>
       </div>
       <EditorContent editor={currentEditor} />
       <p className="mt-2 text-xs text-gray-500">Tip: Use the image button to insert images in content.</p>

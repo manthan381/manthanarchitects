@@ -287,6 +287,21 @@ export const projects: Project[] = [
       "/images/projects/sanar-hospital-3.jpg",
       "/images/projects/sanar-hospital-4.jpg",
       "/images/projects/sanar-hospital-5.jpg",
+      "/images/projects/SANARHOSPITAL.jpeg",
+    ],
+  },
+  {
+    title: "Sanar Hospital",
+    slug: "sanar-hospital",
+    category: "Hospital",
+    description:
+      "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
+    location: "Gurugram",
+    year: 2024,
+    coverImage: "/images/projects/SANARHOSPITAL.jpeg",
+    images: [
+      "/images/projects/SANARHOSPITAL.jpeg",
+
     ],
   },
 

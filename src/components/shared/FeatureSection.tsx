@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function FeatureSection() {
   return (
     <section className="py-10 bg-white selection:bg-primary/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,8 +14,8 @@ export default function FeatureSection() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl text-gray-950 tracking-tighter">
-            Why Choose <span className="font-bold text-gray-900">Manthan Architects</span>
+          <h2 className="text-3xl md:text-4xl text-gray-950 tracking-tighter font-bold">
+            Why Choose <span className="">Manthan Architects</span>
           </h2>
         </motion.div>
 
@@ -25,7 +25,7 @@ export default function FeatureSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-[1000px] mx-auto text-center space-y-6 text-gray-500 leading-relaxed font-light"
+          className="w-full text-left space-y-6 text-gray-500 leading-relaxed font-light text-xl"
         >
           <p>
             Manthan Architects specializes in delivering comprehensive, integrated
@@ -50,7 +50,7 @@ export default function FeatureSection() {
       {/* Presence Section */}
       <div className="bg-[#f8f9fa] mt-10 py-16 pb-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-2 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-center">
             Presence
           </h2>
           <div className="w-16 h-[1px] bg-gray-400 mx-auto mb-12" />

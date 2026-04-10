@@ -13,6 +13,8 @@ const images = [
   "/images/home/hero-image-5.webp",
   "/images/home/hero-image-7.webp",
   "/images/home/hero-image-8.webp",
+  "/images/home/hero-image-9.webp",
+  "/images/home/hero-image-10.webp",
 
 ];
 
@@ -47,12 +49,12 @@ export default function Hero() {
 
   const variants = {
     enter: { opacity: 0, scale: 1.1 },
-    center: { opacity: 1, scale: 1.2 },
-    exit: { opacity: 0, scale: 1.1 },
+    center: { opacity: 1, scale: 1.0 },
+    exit: { opacity: 0, scale: 1.0 },
   };
 
   return (
-    <section className="relative w-full h-screen min-h-[500px] overflow-hidden">
+    <section className="relative w-full h-[70vh] md:h-screen min-h-[500px] overflow-hidden">
       {/* Sliding Images */}
       <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
@@ -62,10 +64,10 @@ export default function Hero() {
           animate="center"
           exit="exit"
           transition={{
-            opacity: { duration: 0.8, ease: "easeInOut" },
-            scale: { duration: 4.5, ease: "linear" },
+            opacity: { duration: 0.3, ease: "easeInOut" },
+            scale: { duration: 1.0, ease: "easeOut" },
           }}
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat transition-transform duration-[4.5s] ease-linear"
           style={{ backgroundImage: `url('${images[currentIndex]}')` }}
         />
       </AnimatePresence>

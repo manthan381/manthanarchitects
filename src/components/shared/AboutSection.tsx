@@ -11,14 +11,14 @@ export default function AboutSection() {
 
   return (
     <>
-      <section className="relative w-full h-[60vh] min-h-[500px] overflow-hidden bg-white">
+      <section className="relative w-full aspect-[1292/726] md:max-h-[85vh] overflow-hidden bg-white">
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.05 }}
-          whileInView={{ opacity: 1, scale: 1.15 }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1.0 }}
           transition={{ 
-            opacity: { duration: 0.8 },
-            scale: { duration: 6, ease: "easeOut" }
+            opacity: { duration: 0.3, ease: "easeInOut" },
+            scale: { duration: 1.0, ease: "easeOut" }
           }}
           viewport={{ once: true, amount: 0.2 }}
         >
@@ -33,7 +33,7 @@ export default function AboutSection() {
         </motion.div>
       </section>
 
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-white pt-12 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={textInitial}
@@ -41,29 +41,21 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <h1 className="text-2xl sm:text-4xl font-medium text-gray-950 mb-12 text-center">
+            <h1 className="text-4xl font-bold text-black mb-8 text-center">
               About Manthan Architects: Crafting Timeless Architecture Design
             </h1>
 
             <div className="space-y-6 text-left text-gray-900 text-lg leading-relaxed">
               <p>
-                Established in 2009 by <strong>35-year-old</strong> visionary entrepreneur Prince Aryan, Manthan Design aims to become one of India's leading architectural firms, known for creating innovative, sustainable, and timeless spaces.
+                Founded in 2009 by visionary entrepreneur <strong>Prince Aryan</strong>, Manthan Design is one of India's leading full-service architectural and design firms. With over <strong>15 years of expertise</strong> and <strong>200+ completed projects</strong>, we specialize in creating innovative, sustainable, and timeless spaces that enhance the way people live, work, and experience their surroundings.
               </p>
 
               <p>
-                Having successfully completed over <strong>200 projects</strong> across India, the company envisions shaping the future of architecture by blending creativity, functionality, and modern design to enhance the way people live, work, and experience their surroundings.
+                Our multidisciplinary approach spans residential, commercial, institutional, hospitality, and interiors—offering complete solutions from concept development to turnkey execution. Supported by our in-house facility for bespoke furniture, custom millwork, wardrobes, and curated décor, we deliver seamless, high-quality results tailored to each client's vision.
               </p>
 
               <p>
-                As a multidisciplinary architectural firm, we offer integrated solutions across residential, commercial, institutional, hospitality, and interior design. By blending global design perspectives with local sensibilities, we deliver spaces that are timeless, functional, and meaningful.
-              </p>
-
-              <p>
-                What sets us apart is our ability to provide a complete one-stop solution for architecture, design, and project execution-from concept development and planning to interior detailing and project coordination-ensuring quality, innovation, and sustainability in every project.
-              </p>
-
-              <p>
-                Our design philosophy focuses on simplicity, elegance, and purposeful planning. We create clean, refined spaces that respond to the strengths and challenges of each site, while integrating sustainable strategies and modern technologies to deliver functional, responsible, and future-ready architecture.
+                Guided by a philosophy of simplicity, elegance, and purposeful planning, we blend global design perspectives with local craftsmanship. Every project reflects refined aesthetics, sustainability, and innovation—ensuring architecture that is functional, future-ready, and enduring.
               </p>
             </div>
           </motion.div>

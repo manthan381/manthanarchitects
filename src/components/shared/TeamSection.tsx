@@ -26,7 +26,7 @@ export function TeamSection() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl text-gray-900 mb-4 text-center">
+        <h2 className="text-4xl font-bold text-black mb-4 text-center">
           <span className="font-bold">Leadership</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-center">

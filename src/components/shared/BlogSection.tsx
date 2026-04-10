@@ -58,16 +58,16 @@ export default function BlogSection({
 
   return (
     <section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl text-gray-950 mb-4"
+          className="text-3xl sm:text-4xl text-gray-950 mb-4 font-bold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Top Industry <span className="font-bold">Insights</span>
+          Top Industry <span>Insights</span>
         </motion.h2>
 
         {/* Description */}
