@@ -24,7 +24,7 @@ const team = [
 
 export function TeamSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="pt-2 pb-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-black mb-4 text-center">
           <span className="font-bold">Leadership</span>

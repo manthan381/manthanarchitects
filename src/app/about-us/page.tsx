@@ -20,7 +20,7 @@ export default function Home() {
       <MissionVisionSection />
       <AboutServicesSection />
       <TeamSection />
-      <div className="bg-gray-50 py-20 mx-auto">
+      <div className="bg-gray-50 pt-10 pb-20 mx-auto">
         <div className="text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold text-black mb-6">

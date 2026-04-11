@@ -60,7 +60,7 @@ const services = [
 
 export function AboutServicesSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="pt-10 pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Section Header */}

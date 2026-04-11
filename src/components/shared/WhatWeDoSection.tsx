@@ -30,7 +30,7 @@ const services = [
 
 export default function WhatWeDoSection() {
   return (
-    <section className="pt-10 pb-8 bg-[#dff1e0] overflow-hidden">
+    <section className="pt-12 pb-4 bg-gray-50 overflow-hidden">
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24">
 
         {/* Header Section */}
@@ -61,7 +61,7 @@ export default function WhatWeDoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-gray-900 text-lg md:text-xl text-left border-l-4 border-primary pl-6 mb-10 leading-relaxed max-w-6xl"
+          className="text-gray-600 text-lg md:text-xl text-left border-l-4 border-primary pl-6 mb-10 leading-relaxed max-w-6xl"
         >
           We provide end-to-end solutions in Architecture, Interior Designing,
           Construction, and Modular & Custom Furniture — all under one roof for
@@ -102,7 +102,7 @@ export default function WhatWeDoSection() {
                 <h3 className="text-2xl font-bold text-gray-950 mb-3 group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-gray-800 leading-relaxed text-base">
+                <p className="text-gray-500 leading-relaxed text-base">
                   {item.description}
                 </p>
               </div>

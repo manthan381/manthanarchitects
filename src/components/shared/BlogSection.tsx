@@ -57,7 +57,7 @@ export default function BlogSection({
   const blogs = posts.length > 0 ? posts : defaultBlogs;
 
   return (
-    <section>
+    <section className="pt-16 pb-4">
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2

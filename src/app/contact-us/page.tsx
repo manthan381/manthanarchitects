@@ -1,12 +1,12 @@
 // src/app/contact-us/page.tsx
 "use client";
-import { useState } from "react";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, MessageCircle, Building } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -49,8 +49,8 @@ export default function ContactPage() {
     <main>
       <Header />
       {/* Header */}
-      <section className="pt-32 pb-10 text-center px-4 max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold">Let’s Talk About Your Project</h1>
+      <section className="pt-24 sm:pt-32 pb-10 text-center px-4 max-w-7xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl font-bold">Let’s Talk About Your Project</h1>
         <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           We're here to answer your questions and bring your vision to life.
           Reach out to us anytime.
@@ -61,8 +61,8 @@ export default function ContactPage() {
       <section className="py-10 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Column: Interactive Map */}
-          <div className="h-full min-h-[450px] lg:min-h-full">
-            <div className="sticky top-24 border border-gray-200 rounded-3xl overflow-hidden shadow-lg h-[450px] lg:h-[480px]">
+          <div className="h-full min-h-[300px] sm:min-h-[450px] lg:min-h-full">
+            <div className="lg:sticky lg:top-24 border border-gray-200 rounded-3xl overflow-hidden shadow-lg h-[300px] sm:h-[450px] lg:h-[480px]">
               <iframe
                 className="w-full h-full"
                 loading="lazy"
@@ -123,11 +123,11 @@ export default function ContactPage() {
       {/* Contact Form */}
       <section id="booking-form" className="py-20 px-4 bg-muted selection:bg-primary/20">
         <div className="max-w-4xl mx-auto bg-white dark:bg-background shadow-2xl rounded-3xl overflow-hidden border border-gray-100">
-          <div className="bg-[#273027] p-8 text-center text-white">
-            <h2 className="text-3xl font-bold mb-2">send us a message</h2>
-            <p className="text-gray-300 font-light">we usually respond within 24 hours</p>
+          <div className="bg-gray-200 p-8 text-center text-black">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-2 lowercase tracking-tight">send us a message</h2>
+            <p className="text-gray-600 font-light lowercase">we usually respond within 24 hours</p>
           </div>
-          <div className="p-8 sm:p-12">
+          <div className="p-6 sm:p-12">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <label className="text-sm font-semibold text-gray-700">full name *</label>

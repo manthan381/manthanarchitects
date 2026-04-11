@@ -20,7 +20,7 @@ export default function ThreeColumnImages({
   columns,
 }: ThreeColumnImagesProps) {
   return (
-    <section className="py-10 text-center overflow-visible">
+    <section className="section-shell text-center overflow-visible">
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24">
 
         {/* Heading */}

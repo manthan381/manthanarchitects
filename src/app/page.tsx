@@ -44,7 +44,7 @@ export default async function Home() {
     <main className="lowercase">
       <Header />
       <Hero />
-      <div className="bg-white py-16">
+      <section className="bg-white pt-8 pb-4">
         <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
           <div className="flex flex-col items-center gap-4">
             <img src="/images/home/interior-design-1.webp" alt="interior design" className="w-[50px] h-[50px] object-contain" />
@@ -63,11 +63,11 @@ export default async function Home() {
             <span className="font-bold text-lg text-gray-900">decor</span>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-white py-12 px-6 sm:px-10 lg:px-24">
-        <div className="max-w-[1600px] w-full mx-auto space-y-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight text-center">
+      <section className="bg-white pt-4 pb-8">
+        <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 space-y-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight text-left">
             manthan architects – thoughtful architecture & inspired spaces
           </h1>
           <div className="space-y-6 text-gray-500 leading-relaxed font-light text-left">
@@ -79,40 +79,36 @@ export default async function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div
+      <section
         className="bg-cover bg-center bg-white"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/images/bg/bg-architect-1.png')",
         }}
       >
-        <div className="mt-8 md:mt-2">
-          <TrustedBy />
-        </div>
+        <TrustedBy />
         <FeatureSection />
-      </div>
-      <div className="bg-[#dff1e0] pt-2 pb-4">
-        <WhatWeDoSection />
-      </div>
-      <div className="border-b-2 bg-gray-50">
-        <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 pt-16 pb-20">
-          <h3 className="text-4xl text-center pb-8 font-bold">
+      </section>
+      <WhatWeDoSection />
+      <section className="border-b-2 bg-gray-50 pt-4 pb-12">
+        <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24">
+          <h3 className="text-4xl text-center font-bold">
             we make it <span>for everyone</span>
           </h3>
           <OrbitLayout />
         </div>
-      </div>
-      <div className="bg-gray-900 py-10">
+      </section>
+      <section className="bg-[#111111]">
         <ProjectsSection />
-      </div>
-      <div className="bg-[#dff1e0]/50 py-4">
+      </section>
+      <section className="bg-white">
         <ThreeColumnImages heading="our core services" columns={data} />
-      </div>
-      <div className="py-16 border-t-2 border-gray-100">
+      </section>
+      <section className="border-t-2 border-gray-100">
         <BlogSection posts={latestPosts} />
-      </div>
+      </section>
       <ContactCTA />
       <Footer />
     </main>

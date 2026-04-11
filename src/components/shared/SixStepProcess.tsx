@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import {
-  ClipboardList,
-  Ruler,
-  PencilRuler,
-  Building2,
-  Hammer,
-  ThumbsUp,
-  ArrowRight,
+    ArrowRight,
+    Building2,
+    ClipboardList,
+    Hammer,
+    PencilRuler,
+    Ruler,
+    ThumbsUp,
 } from "lucide-react";
 
 const steps = [
@@ -70,7 +70,7 @@ export default function SixStepProcess() {
 
         {/* Timeline */}
         <div className="overflow-x-auto">
-          <div className="flex items-center gap-8 min-w-[900px] justify-center">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 min-w-0 sm:min-w-[900px] justify-center">
             {steps.map((step, index) => (
               <div key={index} className="flex items-center gap-4">
                 <motion.div
@@ -93,7 +93,7 @@ export default function SixStepProcess() {
 
                 {/* Arrow */}
                 {index < steps.length - 1 && (
-                  <ArrowRight className="text-gray-400 shrink-0" size={20} />
+                  <ArrowRight className="hidden sm:block text-gray-400 shrink-0" size={20} />
                 )}
               </div>
             ))}
