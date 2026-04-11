@@ -34,7 +34,7 @@ const projects = [
   },
   {
     title: "Highways & Toll Plaza",
-    image: "/images/projects/highways-toll-plaza.jpg",
+    image: "/images/services/service-image-2.webp",
     link: "/projects?category=Highways+and+Toll+Plaza",
   },
   {
@@ -46,7 +46,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section>
+    <section className="section-shell">
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2
@@ -82,8 +82,8 @@ export default function ProjectsSection() {
             <div
               key={i}
               className={`grid gap-3 ${i % 2 === 0
-                  ? "grid-cols-1 sm:grid-cols-2" // 2-column layout
-                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" // 3-column layout
+                ? "grid-cols-1 sm:grid-cols-2" // 2-column layout
+                : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" // 3-column layout
                 }`}
             >
               {chunk.map((project, index) => (

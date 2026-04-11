@@ -31,9 +31,8 @@ export const projects: Project[] = [
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Plot-183 Udyog Vihar Phase-I, Gurugram",
     year: 2023,
-    coverImage: "/images/projects/urban-company-office-6.jpg",
+    coverImage: "/images/home/hero-image-1.webp",
     images: [
-      "/images/projects/urban-company-office-1.JPG",
       "/images/projects/urban-company-office-2.jpg",
       "/images/projects/urban-company-office-3.JPG",
       "/images/projects/urban-company-office-4.JPG",
@@ -247,7 +246,7 @@ export const projects: Project[] = [
       "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
     location: "Sohna Road, Gurugram",
     year: 2024,
-    coverImage: "/images/projects/radison-hotel-front.jpg",
+    coverImage: "/images/home/hero-image-5.webp",
     images: [
       "/images/projects/radison-hotel-front.jpg",
       "/images/projects/radison-hotel-front-2.jpg",
@@ -280,28 +279,14 @@ export const projects: Project[] = [
       "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
     location: "Gurugram",
     year: 2024,
-    coverImage: "/images/projects/sanar-hospital-1.jpg",
+    coverImage: "/images/projects/SANARHOSPITAL.jpeg",
     images: [
+      "/images/projects/SANARHOSPITAL.jpeg",
       "/images/projects/sanar-hospital-1.jpg",
       "/images/projects/sanar-hospital-2.jpg",
       "/images/projects/sanar-hospital-3.jpg",
       "/images/projects/sanar-hospital-4.jpg",
       "/images/projects/sanar-hospital-5.jpg",
-      "/images/projects/SANARHOSPITAL.jpeg",
-    ],
-  },
-  {
-    title: "Sanar Hospital",
-    slug: "sanar-hospital",
-    category: "Hospital",
-    description:
-      "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
-    location: "Gurugram",
-    year: 2024,
-    coverImage: "/images/projects/SANARHOSPITAL.jpeg",
-    images: [
-      "/images/projects/SANARHOSPITAL.jpeg",
-
     ],
   },
 
@@ -314,7 +299,7 @@ export const projects: Project[] = [
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Rajouri",
     year: 2024,
-    coverImage: "/images/projects/back-2-back-bar.jpg",
+    coverImage: "/images/projects/back-2-back-bar-1.jpg",
     images: [
       "/images/projects/back-2-back-bar-1.jpg",
       "/images/projects/back-2-back-bar-2.jpg",
@@ -336,7 +321,6 @@ export const projects: Project[] = [
       "/images/projects/bellvino-night-club-3.png",
       "/images/projects/bellvino-night-club-4.png",
       "/images/projects/bellvino-night-club-5.png",
-      "/images/projects/bellvino-night-club-6.png",
       "/images/projects/bellvino-night-club-7.jpg",
       "/images/projects/bellvino-night-club-8.jpg",
       "/images/projects/bellvino-night-club-9.jpg",
@@ -466,20 +450,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Brew Lab Microbrewery",
-    slug: "brew-lab",
-    category: "Restaurant, Bar and Microbrewery",
-    description:
-      "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
-    location: "Sector-54, Gurgaon, Haryana",
-    year: 2024,
-    coverImage: "/images/projects/brew-lab-1.jpg",
-    images: [
-      "/images/projects/brew-lab-1.jpg",
-      "/images/projects/brew-lab-2.jpg",
-    ],
-  },
-  {
     title: "Brew Window",
     slug: "brew-window",
     category: "Restaurant, Bar and Microbrewery",
@@ -595,9 +565,9 @@ export const projects: Project[] = [
       "Highway and toll plaza designs emphasizing efficiency, safety, and sustainability. Wide lanes, clear signage, and electronic tolling ensure smooth traffic flow and minimal delays. A continuous green belt of native trees and shrubs, alongside the road and around the plaza absorbs emissions, reduces noise, and manages rainwater naturally.",
     location: "Hajipur(Delhi - Mumbai Expressway), Haryana",
     year: 2024,
-    coverImage: "/images/projects/highways-toll-plaza.jpg",
+    coverImage: "/images/services/service-image-2.webp",
     images: [
-      "/images/projects/highways-toll-plaza.jpg",
+      "/images/services/service-image-2.webp",
       "/images/projects/highways-toll-plaza-2.jpg",
       "/images/projects/highways-toll-plaza-3.jpg",
       "/images/projects/highways-toll-plaza-4.jpg",
@@ -634,7 +604,7 @@ export const projects: Project[] = [
       "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
     location: "DLF Phase-2, Gurgaon, Haryana",
     year: 2024,
-    coverImage: "/images/projects/anm-45-46.jpg",
+    coverImage: "/images/projects/anm-45-46-1.jpg",
     images: [
       "/images/projects/anm-45-46-1.jpg",
       "/images/projects/anm-45-46-2.jpg",

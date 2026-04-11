@@ -12,29 +12,29 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/
 
 export default function Footer() {
   return (
-    <footer className="bg-[#273027] text-white">
-      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-8 pt-10">
+    <footer className="bg-[#111111] text-white">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 pb-8 pt-4">
           {/* Logo + About */}
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
               Manthan Architects
             </h2>
-            <p className="text-gray-400">
+            <p className="text-sm sm:text-base text-gray-400">
               Manthan Architects is a platform that is transforming the experience of
               creating, maintaining, and managing spaces with technology,
               organizing the industry, creating standards and processes, and
               driving transparency.
             </p>
             {/* Socials */}
-            <div className="py-10">
-              <h3 className="text-2xl font-bold text-white mb-4">Follow Us</h3>
-              <div className="flex gap-4">
+            <div className="pt-6 pb-0">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Follow Us</h3>
+              <div className="flex gap-4 flex-wrap">
                 <a
                   href="https://www.facebook.com/manthandezinstudio"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Facebook"
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-400 hover:text-[#eb5e22] transition-colors duration-200"
                 >
                   <FaFacebookF size={30} />
                 </a>
@@ -43,7 +43,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Instagram"
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-400 hover:text-[#eb5e22] transition-colors duration-200"
                 >
                   <FaInstagram size={30} />
                 </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our LinkedIn"
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-400 hover:text-[#eb5e22] transition-colors duration-200"
                 >
                   <FaLinkedinIn size={30} />
                 </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our X"
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-400 hover:text-[#eb5e22] transition-colors duration-200"
                 >
                   <FaXTwitter size={30} />
                 </a>
@@ -71,44 +71,44 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="lg:justify-self-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
               Company Information
             </h3>
-            <ul className="space-y-2 text-lg text-gray-400">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:text-lg text-gray-400 sm:block sm:space-y-2">
               <li>
-                <Link href="/" className="hover:text-white transition">
+                <Link href="/" className="hover:text-[#eb5e22] transition-colors duration-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about-us" className="hover:text-white transition">
+                <Link href="/about-us" className="hover:text-[#eb5e22] transition-colors duration-200">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/architecture" className="hover:text-white transition">
-                  Architects Design
+                <Link href="/services" className="hover:text-[#eb5e22] transition-colors duration-200">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link href="/elevation-design" className="hover:text-white transition">
-                  Elevation Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-white transition">
+                <Link href="/projects" className="hover:text-[#eb5e22] transition-colors duration-200">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition">
+                <Link href="/career" className="hover:text-[#eb5e22] transition-colors duration-200">
+                  Career
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#eb5e22] transition-colors duration-200">
                   Blog
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact-us"
-                  className="hover:text-white transition"
+                  className="hover:text-[#eb5e22] transition-colors duration-200"
                 >
                   Contact Us
                 </Link>
@@ -118,12 +118,12 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="lg:justify-self-end">
-            <h3 className="text-2xl font-semibold text-white mb-4">Contact</h3>
-            <ul className="space-y-8 text-lg text-gray-100">
-              <li className="flex gap-2">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Contact</h3>
+            <ul className="space-y-3 text-sm sm:text-lg text-gray-100">
+              <li className="flex items-start gap-2">
                 <div>
                   <MapPin
-                    size={32}
+                    size={28}
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
@@ -138,7 +138,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <Smartphone
-                    size={32}
+                    size={28}
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
@@ -147,7 +147,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <Mail
-                    size={32}
+                    size={28}
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <MessageCircle
-                    size={32}
+                    size={28}
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
@@ -165,7 +165,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <CalendarClock
-                    size={32}
+                    size={28}
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
@@ -176,8 +176,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-4 border-t border-neutral-700 py-6 text-center text-gray-300">
-          <p className="text-xs">
+        <div className="mt-4 border-t border-neutral-800 py-6 text-center text-gray-500">
+          <p className="text-[11px] sm:text-xs">
             © {new Date().getFullYear()} Manthan Architects. All rights
             reserved.
             <br />

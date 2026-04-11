@@ -43,7 +43,7 @@ export default function ClientProjectGallery({
               width={600}
               height={400}
               unoptimized
-              className="rounded-lg object-cover w-full h-72"
+              className="rounded-lg object-cover w-full h-52 sm:h-64 md:h-72"
             />
           </button>
         ))}

@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { StatsSectionReusable } from "./StatsSectionReusable";
 import { Building2, Trophy, Users2 } from "lucide-react";
-import { Button } from "../ui/button";
+import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../ui/button";
+import { StatsSectionReusable } from "./StatsSectionReusable";
 
 export default function ExpertiseHero() {
   const stats = [
@@ -49,7 +49,7 @@ export default function ExpertiseHero() {
 
         {/* Right: Image */}
         <motion.div
-          className="relative w-full h-[500px]"
+          className="relative w-full h-[320px] sm:h-[420px] md:h-[500px]"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}

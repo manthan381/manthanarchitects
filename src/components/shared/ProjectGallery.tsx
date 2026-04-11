@@ -44,7 +44,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
                   alt={project.title}
                   width={600}
                   height={400}
-                  className="w-full h-[300px] object-cover transition rounded-xl"
+                  className="w-full h-[220px] sm:h-[260px] md:h-[300px] object-cover transition rounded-xl"
                 />
                 <div className="text-gray-900">
                   <h3 className="text-lg font-semibold pt-2 pb-1">

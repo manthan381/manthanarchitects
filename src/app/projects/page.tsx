@@ -38,25 +38,25 @@ const categoryDescriptions: Record<ProjectCategory | "All", string> = {
 export default function ProjectsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const categoryParam = searchParams.get("category");
-
-  const initialCategory: ProjectCategory | "All" =
-    categoryParam && categories.includes(categoryParam as ProjectCategory)
-      ? (categoryParam as ProjectCategory)
-      : "All";
-
-  const [selectedCategory, setSelectedCategory] = useState<
-    ProjectCategory | "All"
-  >(initialCategory);
-
-  // Update query param when category changes
-  useEffect(() => {
-    const newParams = new URLSearchParams();
-    if (selectedCategory !== "All") {
-      newParams.set("category", selectedCategory);
+  
+  // Single source of truth: the URL
+  const selectedCategory = useMemo(() => {
+    const category = searchParams.get("category");
+    if (category && categories.includes(category as any)) {
+      return category as ProjectCategory;
     }
-    router.push(`/projects?${newParams.toString()}`);
-  }, [selectedCategory, router]);
+    return "All";
+  }, [searchParams]);
+
+  const handleCategoryChange = (category: ProjectCategory | "All") => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (category === "All") {
+      params.delete("category");
+    } else {
+      params.set("category", category);
+    }
+    router.push(`/projects?${params.toString()}`, { scroll: false });
+  };
 
   const filteredProjects = useMemo(() => {
     return selectedCategory === "All"
@@ -76,7 +76,7 @@ export default function ProjectsPage() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
                 ? "bg-[#273027] text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"

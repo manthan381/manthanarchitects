@@ -24,9 +24,12 @@ const STATIC_ROUTES: Array<{
   priority: number;
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
 }> = [
-    { path: "", priority: 1.0, changeFrequency: "daily" },
+    { path: "", priority: 1, changeFrequency: "daily" },
     { path: "/projects", priority: 0.9, changeFrequency: "weekly" },
     { path: "/contact-us", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/career", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/services", priority: 0.85, changeFrequency: "weekly" },
+    { path: "/services/furniture", priority: 0.8, changeFrequency: "monthly" },
     { path: "/about-us", priority: 0.8, changeFrequency: "monthly" },
     { path: "/architects-design", priority: 0.8, changeFrequency: "weekly" },
     { path: "/elevation-design", priority: 0.8, changeFrequency: "weekly" },

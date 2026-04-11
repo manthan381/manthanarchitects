@@ -1,10 +1,10 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const clientLogos = [
   "/images/brands/Logo-1.png",
@@ -34,7 +34,7 @@ const clientLogos = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-10">
+    <section className="pt-4 pb-12">
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         <h2 className="text-3xl sm:text-4xl text-gray-900 pb-10 font-bold">
           Trusted by <span>Leading Brands</span>

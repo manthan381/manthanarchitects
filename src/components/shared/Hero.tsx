@@ -18,6 +18,45 @@ const images = [
 
 ];
 
+const imageMeta = [
+  {
+    title: "Urban Company, Corporate Office",
+    location: "Plot-183 Udyog Vihar Phase-I, Gurugram",
+  },
+  {
+    title: "Sanar Multispeciality Hospital",
+    location: "Gurugram",
+  },
+  {
+    title: "Punjabi Haveli & Resort",
+    location: "Katra, Jammu",
+  },
+  {
+    title: "Bellvino Night Club",
+    location: "Gurgaon",
+  },
+  {
+    title: "Radison Blu Hotel",
+    location: "Sohna Road, Gurugram",
+  },
+   {
+    title: "Punjabi Haveli & Resort",
+    location: "Katra, Jammu",
+  },
+   {
+    title: "BSTS Tower",
+    location: "Udyog Vihar Phase-1, Gurgaon, Haryana",
+  },
+  {
+    title: "Quaff Brewing",
+    location: "DLF Cyber City, Gurugram, Haryana",
+  },
+  {
+    title: "Feb Hotels",
+    location: "183 Udyog Vihar Phase-1, Gurgaon, Haryana",
+  },
+];
+
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
@@ -53,8 +92,10 @@ export default function Hero() {
     exit: { opacity: 0, scale: 1.0 },
   };
 
+  const currentMeta = imageMeta[currentIndex];
+
   return (
-    <section className="relative w-full h-[70vh] md:h-screen min-h-[500px] overflow-hidden">
+    <section className="relative w-full h-[60vh] sm:h-[70vh] md:h-screen min-h-[420px] sm:min-h-[500px] overflow-hidden">
       {/* Sliding Images */}
       <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
@@ -67,7 +108,7 @@ export default function Hero() {
             opacity: { duration: 0.3, ease: "easeInOut" },
             scale: { duration: 1.0, ease: "easeOut" },
           }}
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat transition-transform duration-[4.5s] ease-linear"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[4.5s] ease-linear"
           style={{ backgroundImage: `url('${images[currentIndex]}')` }}
         />
       </AnimatePresence>
@@ -78,23 +119,40 @@ export default function Hero() {
       {/* Left Arrow */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 transition-all"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 sm:p-3 transition-all"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={28} />
+        <ChevronLeft size={28} className="scale-90 sm:scale-100" />
       </button>
 
       {/* Right Arrow */}
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-3 transition-all"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 sm:p-3 transition-all"
         aria-label="Next slide"
       >
-        <ChevronRight size={28} />
+        <ChevronRight size={28} className="scale-90 sm:scale-100" />
       </button>
 
+      {currentMeta ? (
+        <div
+          className="absolute bottom-16 sm:bottom-16 left-3 right-3 sm:left-auto sm:right-6 z-20 max-w-none sm:max-w-[360px] rounded-3xl px-4 py-3 sm:px-6 sm:py-5 text-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.7)] text-center sm:text-left"
+          style={{
+            background:
+              "radial-gradient(140% 140% at 15% 20%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.28) 40%, rgba(0,0,0,0.12) 100%)",
+          }}
+        >
+          <p className="text-sm sm:text-lg font-semibold uppercase tracking-[0.12em] sm:tracking-[0.2em] leading-snug text-balance drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+            {currentMeta.title}
+          </p>
+          <p className="mt-1 sm:mt-2 text-[11px] sm:text-sm font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]">
+            {currentMeta.location}
+          </p>
+        </div>
+      ) : null}
+
       {/* Slider Indicators (Dots) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+      <div className="absolute bottom-4 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}

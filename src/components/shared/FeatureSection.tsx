@@ -1,21 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { animate, motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function FeatureSection() {
   return (
-    <section className="py-10 bg-white selection:bg-primary/10">
-      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
+    <section className="pt-4 pb-12 bg-white selection:bg-primary/10">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center pb-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-8"
+          className="mb-4"
         >
-          <h2 className="text-3xl md:text-4xl text-gray-950 tracking-tighter font-bold">
-            Why Choose <span className="">Manthan Architects</span>
+          <h2 className="text-3xl md:text-4xl text-gray-950 tracking-tighter font-bold lowercase">
+            why choose manthan architects
           </h2>
         </motion.div>
 
@@ -48,55 +49,64 @@ export default function FeatureSection() {
       </div>
 
       {/* Presence Section */}
-      <div className="bg-[#f8f9fa] mt-10 py-16 pb-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-center">
-            Presence
-          </h2>
-          <div className="w-16 h-[1px] bg-gray-400 mx-auto mb-12" />
+      <div className="section-shell pb-20 bg-[#f8f9fa]">
+        <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-24">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-black mb-10 text-center lowercase tracking-tight"
+          >
+            presence
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Stat Card 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white py-8 px-6 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
-            >
-              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 tracking-wide">15+</h3>
-              <div className="w-12 h-[1px] bg-gray-200 mb-6" />
-              <p className="text-sm text-gray-500 font-light tracking-wide">years of experience</p>
-            </motion.div>
-
-            {/* Stat Card 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white py-8 px-6 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
-            >
-              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 tracking-wide">1,000+</h3>
-              <div className="w-12 h-[1px] bg-gray-200 mb-6" />
-              <p className="text-sm text-gray-500 font-light tracking-wide">projects globally</p>
-            </motion.div>
-
-            {/* Stat Card 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white py-8 px-6 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
-            >
-              <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 tracking-wide">150+</h3>
-              <div className="w-12 h-[1px] bg-gray-200 mb-6" />
-              <p className="text-sm text-gray-500 font-light tracking-wide">team members</p>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { label: "years of experience", value: 15, suffix: "+" },
+              { label: "projects globally", value: 1000, suffix: "+" },
+              { label: "team members", value: 150, suffix: "+" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white py-10 px-8 flex flex-col items-center justify-center shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] rounded-2xl group border border-transparent hover:border-gray-100 transition-all"
+              >
+                <div className="mb-4">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="w-10 h-[1px] bg-gray-200 mb-4 group-hover:w-16 transition-all duration-300" />
+                <p className="text-sm text-gray-500 font-medium tracking-wide lowercase">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => setCount(Math.floor(latest)),
+      });
+      return () => controls.stop();
+    }
+  }, [value, isInView]);
+
+  return (
+    <span ref={ref} className="text-4xl md:text-5xl font-bold text-black tracking-tight">
+      {count.toLocaleString()}{suffix}
+    </span>
   );
 }
