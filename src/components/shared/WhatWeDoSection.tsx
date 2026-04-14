@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -10,21 +11,24 @@ const services = [
     title: "Office & Commercial Spaces",
     description:
       "We redefine work environments with intelligent spatial design and precision-engineered structures to enhance productivity and reinforce brand identity.",
-    image: "/images/services/w1.png",
+    image: "/images/home/hero-image-8.webp",
+    link: "/projects?category=Office+%26+Residence&service=build",
   },
   {
     id: "02",
     title: "Residential Projects",
     description:
       "We design and construct customized homes that seamlessly align with your lifestyle, creating beautiful, functional spaces.",
-    image: "/images/services/w2.png",
+    image: "/images/projects/k-block-1485-palam-vihar.jpg",
+    link: "/projects?category=Modern+Villa",
   },
   {
     id: "03",
     title: "Customizable Furnitures",
     description:
       "We design and manufacture modular, space-efficient furniture precisely tailored to your style, requirements, and space dimensions.",
-    image: "/images/services/w3.png",
+    image: "/images/services/customizable-furniture-2.webp",
+    link: "/services/furniture",
   },
 ];
 
@@ -83,6 +87,7 @@ export default function WhatWeDoSection() {
               viewport={{ once: true }}
               className="group flex flex-col"
             >
+             <Link href={item.link} className="flex flex-col h-full cursor-pointer">
               {/* Image Container */}
               <div className="relative h-80 w-full mb-8 overflow-hidden rounded-3xl shadow-lg border-4 border-white/50">
                 {/* Minimalist Index Tag */}
@@ -106,6 +111,7 @@ export default function WhatWeDoSection() {
                   {item.description}
                 </p>
               </div>
+             </Link>
             </motion.div>
           ))}
         </div>

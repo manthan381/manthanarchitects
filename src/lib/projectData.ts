@@ -1,14 +1,13 @@
 // /lib/data/projects.ts
 
 export type ProjectCategory =
-  | "Office"
-  | "Hotel and Resort"
-  | "Hospital"
-  | "Restaurant, Bar and Microbrewery"
-  | "Commercial"
-  | "Highways and Toll Plaza"
+  | "Office & Residence"
+  | "Hotel & Resort"
+  | "Hospital & Commercial"
+  | "Restaurant & Bar"
+  | "Toll Plaza & Expressway"
   | "Modern Villa"
-  | "Gym";
+  | "Gym & Others";
 
 export type Project = {
   title: string;
@@ -22,11 +21,132 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Radison Blu Hotel",
+    slug: "radison-hotel",
+    category: "Hotel & Resort",
+    description:
+      "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
+    location: "Sohna Road, Gurugram",
+    year: 2024,
+    coverImage: "/images/home/hero-image-5.webp",
+    images: [
+      "/images/projects/radison-hotel-front.jpg",
+      "/images/projects/radison-hotel-front-2.jpg",
+      "/images/projects/radison-hotel-front-3.jpg",
+    ],
+  },
+  {
+    title: "Red Velvet Hotel",
+    slug: "red-velvet-hotel",
+    category: "Hotel & Resort",
+    description:
+      "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
+    location: "Patna, Bihar",
+    year: 2024,
+    coverImage: "/images/projects/red-velvet-1.jpg",
+    images: [
+      "/images/projects/red-velvet-1.jpg",
+      "/images/projects/red-velvet-2.jpg",
+      "/images/projects/red-velvet-3.jpg",
+      "/images/projects/red-velvet-4.jpg",
+    ],
+  },
+  {
+    title: "Sanar Multispeciality Hospital",
+    slug: "sanar-multispeciality-hospital",
+    category: "Hospital & Commercial",
+    description:
+      "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
+    location: "Gurugram",
+    year: 2024,
+    coverImage: "/images/projects/SANARHOSPITAL.jpeg",
+    images: [
+      "/images/projects/SANARHOSPITAL.jpeg",
+      "/images/projects/sanar-hospital-1.jpg",
+      "/images/projects/sanar-hospital-2.jpg",
+      "/images/projects/sanar-hospital-3.jpg",
+      "/images/projects/sanar-hospital-4.jpg",
+      "/images/projects/sanar-hospital-5.jpg",
+    ],
+  },
+  {
+    title: "BSTS Tower",
+    slug: "bsts-corporate-plaza",
+    category: "Hospital & Commercial",
+    description:
+      "Effective commercial space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning, layered lighting, durable materials, and flexible layouts. Clear circulation paths, defined zones, and ample room for fixtures and furniture ensure smooth flow.",
+    location: "Udyog Vihar Phase-1, Gurgaon, Haryana",
+    year: 2024,
+    coverImage: "/images/projects/bsts-corporate-plaza.jpg",
+    images: ["/images/projects/bsts-corporate-plaza.jpg"],
+  },
+  {
+    title: "Highway Toll Plaza and Others Facilities Development",
+    slug: "highways-and-toll-plaza",
+    category: "Toll Plaza & Expressway",
+    description:
+      "Highway and toll plaza designs emphasizing efficiency, safety, and sustainability. Wide lanes, clear signage, and electronic tolling ensure smooth traffic flow and minimal delays. A continuous green belt of native trees and shrubs, alongside the road and around the plaza absorbs emissions, reduces noise, and manages rainwater naturally.",
+    location: "Hajipur(Delhi - Mumbai Expressway), Haryana",
+    year: 2024,
+    coverImage: "/images/services/service-image-2.webp",
+    images: [
+      "/images/services/service-image-2.webp",
+      "/images/projects/highways-toll-plaza-2.jpg",
+      "/images/projects/highways-toll-plaza-3.jpg",
+      "/images/projects/highways-toll-plaza-4.jpg",
+      "/images/projects/highways-toll-plaza-5.jpg",
+      "/images/projects/highways-toll-plaza-6.jpg",
+      "/images/projects/highways-toll-plaza-7.jpg",
+      "/images/projects/highways-toll-plaza-8.jpg",
+    ],
+  },
+  {
+    title: "Project SS Plaza",
+    slug: "project-ss-plaza",
+    category: "Hospital & Commercial",
+    description:
+      "Effective commercial space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning, layered lighting, durable materials, and flexible layouts. Clear circulation paths, defined zones, and ample room for fixtures and furniture ensure smooth flow.",
+    location: "Re-development, Sector-47, Gurgaon, Haryana",
+    year: 2024,
+    coverImage: "/images/projects/project-ss-plaza.jpg",
+    images: [
+      "/images/projects/project-ss-plaza.jpg",
+      "/images/projects/project-ss-plaza-2.jpg",
+    ],
+  },
+  {
+    title: "Agrawal House",
+    slug: "agrawal-house",
+    category: "Modern Villa",
+    description:
+      "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
+    location: "DLF Phase-2, Gurgaon, Haryana",
+    year: 2024,
+    coverImage: "/images/services/ANM-45-46.webp",
+    images: [
+      "/images/services/ANM-45-46.webp",
+      "/images/projects/anm-45-46-1.jpg",
+      "/images/projects/anm-45-46-2.jpg",
+
+    ],
+  },
+  {
+    title: "K-Block-1485, Palam Vihar",
+    slug: "k-block-1485-palam-vihar",
+    category: "Modern Villa",
+    description:
+      "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
+    location: "Gurgaon",
+    year: 2024,
+    coverImage: "/images/projects/k-block-1485-palam-vihar.jpg",
+    images: ["/images/projects/k-block-1485-palam-vihar.jpg"],
+  },
   /*--------------- Office Projects ----------------*/
   {
     title: "Urban Company, Corporate Office",
     slug: "urban-company-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Plot-183 Udyog Vihar Phase-I, Gurugram",
@@ -51,7 +171,7 @@ export const projects: Project[] = [
   {
     title: "Hotel Red Velvet, Corporate Office",
     slug: "red-velvet-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Gurugram",
@@ -65,9 +185,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Goldmine Office , Urbtech",
+    title: "Goldmine Office, Urbtech",
     slug: "urbtech-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Sector-138, Noida, Uttar Pradesh",
@@ -83,7 +203,7 @@ export const projects: Project[] = [
   {
     title: "Zimbabwe Ambassador Home Office",
     slug: "defence-colony-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Defense Colony, New Delhi",
@@ -98,7 +218,7 @@ export const projects: Project[] = [
   {
     title: "Go Work, Co-Working Offices",
     slug: "go-works-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Udyog Vihar Phase-I, Gurugram",
@@ -120,7 +240,7 @@ export const projects: Project[] = [
   {
     title: "New Door, Real Estate Consultant Office",
     slug: "new-door-success-tower",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Success Tower, Sector-62, Noida",
@@ -140,7 +260,7 @@ export const projects: Project[] = [
   {
     title: "CIBT Corporate Office",
     slug: "cibt-corporate-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Gurugram",
@@ -162,7 +282,7 @@ export const projects: Project[] = [
   {
     title: "Prabhattyam Solvex  Pvt Limited",
     slug: "prabhattyam-solvex-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Sector 135, Noida",
@@ -181,7 +301,7 @@ export const projects: Project[] = [
   {
     title: "General Commandant Office",
     slug: "general-commandant-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Delhi Cantonment, Delhi",
@@ -196,7 +316,7 @@ export const projects: Project[] = [
   {
     title: "Perfect House",
     slug: "perfect-house-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "DLF Phase-II, Gurugram",
@@ -211,7 +331,7 @@ export const projects: Project[] = [
   {
     title: "DM 23",
     slug: "dm-23-real-estate-office",
-    category: "Office",
+    category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "DLF Phase-III, Gurugram",
@@ -224,7 +344,7 @@ export const projects: Project[] = [
   {
     title: "Punjabi Haveli & Resort",
     slug: "punjabi-haveli-jammu",
-    category: "Hotel and Resort",
+    category: "Hotel & Resort",
     description:
       "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
     location: "Katra, Jammu",
@@ -238,63 +358,14 @@ export const projects: Project[] = [
       "/images/projects/punjabi-haveli-jammu-5.jpg",
     ],
   },
-  {
-    title: "Radison Blu Hotel",
-    slug: "radison-hotel",
-    category: "Hotel and Resort",
-    description:
-      "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
-    location: "Sohna Road, Gurugram",
-    year: 2024,
-    coverImage: "/images/home/hero-image-5.webp",
-    images: [
-      "/images/projects/radison-hotel-front.jpg",
-      "/images/projects/radison-hotel-front-2.jpg",
-      "/images/projects/radison-hotel-front-3.jpg",
-    ],
-  },
-  {
-    title: "Red Velvet Hotel",
-    slug: "red-velvet-hotel",
-    category: "Hotel and Resort",
-    description:
-      "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
-    location: "Patna, Bihar",
-    year: 2024,
-    coverImage: "/images/projects/red-velvet-1.jpg",
-    images: [
-      "/images/projects/red-velvet-1.jpg",
-      "/images/projects/red-velvet-2.jpg",
-      "/images/projects/red-velvet-3.jpg",
-      "/images/projects/red-velvet-4.jpg",
-    ],
-  },
 
   /*------------------ Hospital -------------------- */
-  {
-    title: "Sanar Multispeciality Hospital",
-    slug: "sanar-multispeciality-hospital",
-    category: "Hospital",
-    description:
-      "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
-    location: "Gurugram",
-    year: 2024,
-    coverImage: "/images/projects/SANARHOSPITAL.jpeg",
-    images: [
-      "/images/projects/SANARHOSPITAL.jpeg",
-      "/images/projects/sanar-hospital-1.jpg",
-      "/images/projects/sanar-hospital-2.jpg",
-      "/images/projects/sanar-hospital-3.jpg",
-      "/images/projects/sanar-hospital-4.jpg",
-      "/images/projects/sanar-hospital-5.jpg",
-    ],
-  },
 
   /*--------------- Restaurant, Bar and Microbrewery ----------------*/
   {
     title: "Back 2 Bar",
     slug: "back-2-bar",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Rajouri",
@@ -308,7 +379,7 @@ export const projects: Project[] = [
   {
     title: "Bellvino Night Club",
     slug: "bellvino-night-club",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Gurgaon",
@@ -332,7 +403,7 @@ export const projects: Project[] = [
   {
     title: "Castle Barbeque",
     slug: "castle-barbeque",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Ludhiana",
@@ -347,7 +418,7 @@ export const projects: Project[] = [
   {
     title: "Green House",
     slug: "green-house",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Sector 49, Gurugram",
@@ -361,7 +432,7 @@ export const projects: Project[] = [
   {
     title: "Night Club at Mombasa",
     slug: "night-club-at-mombasa",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Kenya",
@@ -375,7 +446,7 @@ export const projects: Project[] = [
   {
     title: "Quaff Brewing",
     slug: "quaff-brewing",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "DLF Cyber City, Gurugram",
@@ -390,7 +461,7 @@ export const projects: Project[] = [
   {
     title: "Tangy House Restro Bar",
     slug: "tangy-house-restro-bar",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Sushant Lok II, Gurugram",
@@ -405,7 +476,7 @@ export const projects: Project[] = [
   {
     title: "Vapour Bar Exchange",
     slug: "vapour-bar-exchange",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Ludhiana",
@@ -420,7 +491,7 @@ export const projects: Project[] = [
   {
     title: "Wall Street Bar",
     slug: "wall-street-bar",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Ludhiana",
@@ -438,7 +509,7 @@ export const projects: Project[] = [
   {
     title: "Barrels of Brew",
     slug: "barrels-of-brew",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Chautala Club, Sirsa, Haryana",
@@ -452,7 +523,7 @@ export const projects: Project[] = [
   {
     title: "Brew Window",
     slug: "brew-window",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "SS Plaza, Sector-47, Gurgaon",
@@ -466,7 +537,7 @@ export const projects: Project[] = [
   {
     title: "Food Frolic",
     slug: "food-frolic",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Sector-84, Manesar, Haryana",
@@ -481,7 +552,7 @@ export const projects: Project[] = [
   {
     title: "Michigun Tap",
     slug: "michigun-tap",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Global Foyer, Sector-44, Gurgaon, Haryana",
@@ -496,7 +567,7 @@ export const projects: Project[] = [
   {
     title: "Norenj",
     slug: "norenj",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Sector-47, Gurgaon, Haryana",
@@ -512,7 +583,7 @@ export const projects: Project[] = [
   {
     title: "Not Just Paranthas",
     slug: "not-just-paranthas",
-    category: "Restaurant, Bar and Microbrewery",
+    category: "Restaurant & Bar",
     description:
       "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
     location: "Pavelion Mall, Ludhiana, Punjab",
@@ -529,59 +600,14 @@ export const projects: Project[] = [
 
   /*--------------- Commercial Projects ----------------*/
 
-  {
-    title: "BSTS Tower",
-    slug: "bsts-corporate-plaza",
-    category: "Commercial",
-    description:
-      "Effective commercial space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning, layered lighting, durable materials, and flexible layouts. Clear circulation paths, defined zones, and ample room for fixtures and furniture ensure smooth flow.",
-    location: "Udyog Vihar Phase-1, Gurgaon, Haryana",
-    year: 2024,
-    coverImage: "/images/projects/bsts-corporate-plaza.jpg",
-    images: ["/images/projects/bsts-corporate-plaza.jpg"],
-  },
-  {
-    title: "Project SS Plaza",
-    slug: "project-ss-plaza",
-    category: "Commercial",
-    description:
-      "Effective commercial space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning, layered lighting, durable materials, and flexible layouts. Clear circulation paths, defined zones, and ample room for fixtures and furniture ensure smooth flow.",
-    location: "Re-development, Sector-47, Gurgaon, Haryana",
-    year: 2024,
-    coverImage: "/images/projects/project-ss-plaza.jpg",
-    images: [
-      "/images/projects/project-ss-plaza.jpg",
-      "/images/projects/project-ss-plaza-2.jpg",
-    ],
-  },
 
   /*--------------- Highways & Toll Plaza ----------------*/
 
-  {
-    title: "Highway Toll Plaza and Others Facilities Development",
-    slug: "highways-and-toll-plaza",
-    category: "Highways and Toll Plaza",
-    description:
-      "Highway and toll plaza designs emphasizing efficiency, safety, and sustainability. Wide lanes, clear signage, and electronic tolling ensure smooth traffic flow and minimal delays. A continuous green belt of native trees and shrubs, alongside the road and around the plaza absorbs emissions, reduces noise, and manages rainwater naturally.",
-    location: "Hajipur(Delhi - Mumbai Expressway), Haryana",
-    year: 2024,
-    coverImage: "/images/services/service-image-2.webp",
-    images: [
-      "/images/services/service-image-2.webp",
-      "/images/projects/highways-toll-plaza-2.jpg",
-      "/images/projects/highways-toll-plaza-3.jpg",
-      "/images/projects/highways-toll-plaza-4.jpg",
-      "/images/projects/highways-toll-plaza-5.jpg",
-      "/images/projects/highways-toll-plaza-6.jpg",
-      "/images/projects/highways-toll-plaza-7.jpg",
-      "/images/projects/highways-toll-plaza-8.jpg",
-    ],
-  },
 
   /*--------------- Residential Projects ----------------*/
   {
-    title: "House",
-    slug: "pataudi-house",
+    title: "Villa",
+    slug: "villa",
     category: "Modern Villa",
     description:
       "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
@@ -597,36 +623,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Agarwal Villa",
-    slug: "agarwal-villa",
-    category: "Modern Villa",
-    description:
-      "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
-    location: "DLF Phase-2, Gurgaon, Haryana",
-    year: 2024,
-    coverImage: "/images/projects/anm-45-46-1.jpg",
-    images: [
-      "/images/projects/anm-45-46-1.jpg",
-      "/images/projects/anm-45-46-2.jpg",
-    ],
-  },
-  {
-    title: "DLF Phase 4",
-    slug: "dlf-phase-4",
-    category: "Modern Villa",
-    description:
-      "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
-    location: "Gurgaon",
-    year: 2024,
-    coverImage: "/images/projects/dlf-phase-4.jpg",
-    images: [
-      "/images/projects/dlf-phase-4-1.jpeg",
-      "/images/projects/dlf-phase-4-2.jpg",
-      "/images/projects/dlf-phase-4-3.jpeg",
-    ],
-  },
-  {
-    title: "J-2, Sector-83",
+    title: "Sector-83",
     slug: "j-2-sector-83",
     category: "Modern Villa",
     description:
@@ -641,17 +638,6 @@ export const projects: Project[] = [
       "/images/projects/j-2-sector-83-gurgaon-india-4.jpg",
       "/images/projects/j-2-sector-83-gurgaon-india-5.jpg",
     ],
-  },
-  {
-    title: "K-Block-1485, Palam Vihar",
-    slug: "k-block-1485-palam-vihar",
-    category: "Modern Villa",
-    description:
-      "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
-    location: "Gurgaon",
-    year: 2024,
-    coverImage: "/images/projects/k-block-1485-palam-vihar.jpg",
-    images: ["/images/projects/k-block-1485-palam-vihar.jpg"],
   },
   {
     title: "Sector 83, India Next",
@@ -674,7 +660,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Sector-31, 975 P",
+    title: "Plot 975, Sector-31",
     slug: "sector-31-975-p",
     category: "Modern Villa",
     description:
@@ -685,7 +671,7 @@ export const projects: Project[] = [
     images: ["/images/projects/sector-31-975-p.jpg"],
   },
   {
-    title: "Studio Appartment, Senate Court",
+    title: "Studio Apartment, Senate Court",
     slug: "studio-appartment-senate-court",
     category: "Modern Villa",
     description:
@@ -700,7 +686,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Vatika India, Next",
+    title: "Vatika India Next",
     slug: "vatika-india-next",
     category: "Modern Villa",
     description:
@@ -720,7 +706,7 @@ export const projects: Project[] = [
   {
     title: "Volt Fitness Gym",
     slug: "volt-fitness-gym",
-    category: "Gym",
+    category: "Gym & Others",
     description:
       "Gym interior design prioritizes functionality and motivation through strategic zoning, appropriate lighting, durable materials, ventilation, mirrors for form checking, and energizing colour schemes.",
     location: "Sector 31",
@@ -737,7 +723,7 @@ export const projects: Project[] = [
   {
     title: "Sirsa Fitness Gym",
     slug: "sirsa-fitness-gym",
-    category: "Gym",
+    category: "Gym & Others",
     description:
       "Gym interior design prioritizes functionality and motivation through strategic zoning, appropriate lighting, durable materials, ventilation, mirrors for form checking, and energizing colour schemes.",
     location: "Sirsa, Haryana",

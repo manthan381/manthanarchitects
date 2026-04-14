@@ -7,50 +7,56 @@ import { ProjectCategory, projects } from "@/lib/projectData";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
-// List of categories with "All"
-const categories: (ProjectCategory | "All")[] = [
-  "All",
-  ...Array.from(new Set(projects.map((p) => p.category))),
+type DisplayCategory = ProjectCategory | "all projects";
+
+// List of categories with "all projects" in specific order
+const categories: DisplayCategory[] = [
+  "all projects",
+  "Hotel & Resort",
+  "Hospital & Commercial",
+  "Toll Plaza & Expressway",
+  "Office & Residence",
+  "Restaurant & Bar",
+  "Modern Villa",
+  "Gym & Others",
 ];
 
 // Category descriptions
-const categoryDescriptions: Record<ProjectCategory | "All", string> = {
-  All: "Explore our complete portfolio of projects across all categories. From residential masterpieces to commercial landmarks, discover the diverse range of architectural and design excellence we've delivered.",
-  Office:
+const categoryDescriptions: Record<ProjectCategory | "all projects", string> = {
+  "all projects": "Explore our complete portfolio of projects across all categories. From residential masterpieces to commercial landmarks, discover the diverse range of architectural and design excellence we've delivered.",
+  "Office & Residence":
     "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
-  "Hotel and Resort":
+  "Hotel & Resort":
     "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
-  Hospital:
-    "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
-  "Restaurant, Bar and Microbrewery":
+  "Hospital & Commercial":
+    "Effective commercial and hospital space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning. Hospital design also creates clean, comfortable, calming environments promoting healing through natural light, proper ventilation, and green spaces.",
+  "Restaurant & Bar":
     "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
-  Commercial:
-    "Effective commercial space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning, layered lighting, durable materials, and flexible layouts. Clear circulation paths, defined zones, and ample room for fixtures and furniture ensure smooth flow.",
-  "Highways and Toll Plaza":
+  "Toll Plaza & Expressway":
     "Highway and toll plaza designs emphasizing efficiency, safety, and sustainability. Wide lanes, clear signage, and electronic tolling ensure smooth traffic flow and minimal delays. A continuous green belt of native trees and shrubs, alongside the road and around the plaza absorbs emissions, reduces noise, and manages rainwater naturally.",
   "Modern Villa":
     "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
-  Gym: "Gym interior design prioritizes functionality and motivation through strategic zoning, appropriate lighting, durable materials, ventilation, mirrors for form checking, and energizing colour schemes.",
+  "Gym & Others": "Gym & others interior design prioritizes functionality and motivation through strategic zoning, appropriate lighting, durable materials, ventilation, mirrors for form checking, and energizing colour schemes.",
 };
 
 export default function ProjectsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  
+
   // Single source of truth: the URL
   const selectedCategory = useMemo(() => {
     const category = searchParams.get("category");
     if (category && categories.includes(category as any)) {
-      return category as ProjectCategory;
+      return category as DisplayCategory;
     }
-    return "All";
+    return "all projects";
   }, [searchParams]);
 
-  const handleCategoryChange = (category: ProjectCategory | "All") => {
+  const handleCategoryChange = (category: DisplayCategory) => {
     const params = new URLSearchParams(searchParams.toString());
-    if (category === "All") {
+    if (category === "all projects") {
       params.delete("category");
     } else {
       params.set("category", category);
@@ -59,10 +65,15 @@ export default function ProjectsPage() {
   };
 
   const filteredProjects = useMemo(() => {
-    return selectedCategory === "All"
-      ? projects
+    return selectedCategory === "all projects"
+      ? projects.filter((p) => categories.includes(p.category as DisplayCategory))
       : projects.filter((p) => p.category === selectedCategory);
   }, [selectedCategory]);
+
+  const isBuildService = searchParams.get("service") === "build";
+  const displayCategories = isBuildService 
+    ? (["Office & Residence"] as DisplayCategory[]) 
+    : categories;
 
   return (
     <>
@@ -72,12 +83,12 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-bold mb-8">Our Projects</h1>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap gap-2 mb-8 border-b pb-4">
-          {categories.map((category) => (
+        <div className="flex flex-wrap gap-1.5 mb-8 border-b pb-4">
+          {displayCategories.map((category) => (
             <button
               key={category}
               onClick={() => handleCategoryChange(category)}
-              className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
+              className={`px-4 py-2 rounded-full text-sm transition capitalize whitespace-nowrap ${selectedCategory === category
                 ? "bg-[#273027] text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
@@ -89,8 +100,8 @@ export default function ProjectsPage() {
 
         {/* Category Description */}
         <div className="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <h2 className="text-2xl font-semibold mb-3">
-            {selectedCategory} Projects
+          <h2 className="text-2xl font-semibold mb-3 capitalize">
+            {selectedCategory === "all projects" ? "All Projects" : `${selectedCategory} Projects`}
           </h2>
           <p className="text-gray-700 leading-relaxed">
             {categoryDescriptions[selectedCategory]}

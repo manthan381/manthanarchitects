@@ -20,40 +20,40 @@ const images = [
 
 const imageMeta = [
   {
-    title: "Urban Company, Corporate Office",
-    location: "Plot-183 Udyog Vihar Phase-I, Gurugram",
+    title: "Urban Company Office",
+    location: "Plot-183 Udyog Vihar, Gurugram",
   },
   {
-    title: "Sanar Multispeciality Hospital",
-    location: "Gurugram",
+    title: "Sanar Hospital",
+    location: "Gurugram, Haryana",
   },
   {
-    title: "Punjabi Haveli & Resort",
+    title: "Punjabi Haveli",
     location: "Katra, Jammu",
   },
   {
     title: "Bellvino Night Club",
-    location: "Gurgaon",
+    location: "Gurugram, Haryana",
   },
   {
     title: "Radison Blu Hotel",
     location: "Sohna Road, Gurugram",
   },
-   {
-    title: "Punjabi Haveli & Resort",
+  {
+    title: "Punjabi Haveli",
     location: "Katra, Jammu",
   },
-   {
+  {
     title: "BSTS Tower",
-    location: "Udyog Vihar Phase-1, Gurgaon, Haryana",
+    location: "Udyog Vihar, Gurugram",
   },
   {
     title: "Quaff Brewing",
-    location: "DLF Cyber City, Gurugram, Haryana",
+    location: "DLF Cyber City, Gurugram",
   },
   {
     title: "Feb Hotels",
-    location: "183 Udyog Vihar Phase-1, Gurgaon, Haryana",
+    location: "Udyog Vihar, Gurugram",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function Hero() {
 
       {currentMeta ? (
         <div
-          className="absolute bottom-16 sm:bottom-16 left-3 right-3 sm:left-auto sm:right-6 z-20 max-w-none sm:max-w-[360px] rounded-3xl px-4 py-3 sm:px-6 sm:py-5 text-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.7)] text-center sm:text-left"
+          className="absolute bottom-16 sm:bottom-16 left-3 right-3 sm:left-auto sm:right-6 z-20 max-w-none sm:max-w-[360px] rounded-3xl px-4 py-3 sm:px-6 sm:py-5 text-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.7)] text-center sm:text-right"
           style={{
             background:
               "radial-gradient(140% 140% at 15% 20%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.28) 40%, rgba(0,0,0,0.12) 100%)",

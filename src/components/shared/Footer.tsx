@@ -8,7 +8,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -64,6 +64,15 @@ export default function Footer() {
                   className="text-gray-400 hover:text-[#eb5e22] transition-colors duration-200"
                 >
                   <FaXTwitter size={30} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@MANTHANARCHITECTS"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit our YouTube channel"
+                  className="text-gray-400 hover:text-[#eb5e22] transition-colors duration-200"
+                >
+                  <FaYoutube size={30} />
                 </a>
               </div>
             </div>
@@ -160,7 +169,7 @@ export default function Footer() {
                     className="bg-gray-100 text-gray-900 p-1 rounded-full"
                   />
                 </div>
-                <div>WhatsApp: +91 98765 43210</div>
+                <div>WhatsApp: +91 9218028364</div>
               </li>
               <li className="flex items-center gap-2">
                 <div>

@@ -4,10 +4,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 type ColumnData = {
   imageSrc: string;
   title: string;
+  link?: string;
 };
 
 type ThreeColumnImagesProps = {
@@ -39,15 +41,15 @@ export default function ThreeColumnImages({
           {columns.map((col, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col items-center gap-6 ${index === 1 ? "md:mt-16" : "mt-0"
-                }`}
+              className={`${index === 1 ? "md:mt-16" : "mt-0"}`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
+             <Link href={col.link || "#"} className="flex flex-col items-center gap-6 cursor-pointer group">
               {/* Circle Wrapper */}
-              <div className="group relative">
+              <div className="relative">
                 {/* Decorative Ring */}
                 <div className="absolute inset-0 rounded-full border-2 border-primary/20 scale-110 group-hover:scale-125 transition-transform duration-700" />
 
@@ -64,11 +66,11 @@ export default function ThreeColumnImages({
 
               {/* Title - Clean & Bold without the line below */}
               <h3
-                className="text-2xl font-bold text-gray-900 mt-4 leading-tight min-h-[3rem] flex items-center"
+                className="text-2xl font-bold text-gray-900 mt-4 leading-tight min-h-[3rem] flex items-center group-hover:text-primary transition-colors"
                 dangerouslySetInnerHTML={{ __html: col.title }}
               />
 
-              {/* Line removed from here */}
+             </Link>
             </motion.div>
           ))}
         </div>
