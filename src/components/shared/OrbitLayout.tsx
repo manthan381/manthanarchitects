@@ -7,47 +7,43 @@ const orbitItems = [
   {
     image: "/images/orbit/5.png",
     label: "COMMERCIAL",
-    link: "/projects?category=Commercial",
+    link: "/projects?category=Hospital+%26+Commercial",
   },
   {
     image: "/images/orbit/7.png",
     label: "HIGHWAYS & TOLL PLAZA",
-    link: "/projects?category=Highways+and+Toll+Plaza",
+    link: "/projects?category=Toll+Plaza+%26+Expressway",
   },
   {
     image: "/images/orbit/9.png",
     label: "RESIDENTIAL",
     link: "/projects?category=Modern+Villa",
   },
-  {
-    image: "/images/orbit/8.png",
-    label: "BREWERY",
-    link: "/projects?category=Restaurant%2C+Bar+and+Microbrewery",
-  },
+
   {
     image: "/images/orbit/6.png",
     label: "FURNITURE",
-    link: "/projects?category=Commercial",
+    link: "/services/furniture",
   },
   {
     image: "/images/orbit/4.png",
     label: "BAR & LOUNGE",
-    link: "/projects?category=Restaurant%2C+Bar+and+Microbrewery",
+    link: "/projects?category=Restaurant+%26+Bar",
   },
   {
     image: "/images/orbit/3.png",
     label: "HOSPITAL",
-    link: "/projects?category=Hospital",
+    link: "/projects?category=Hospital+%26+Commercial",
   },
   {
     image: "/images/orbit/1.png",
     label: "OFFICE",
-    link: "/projects?category=Office",
+    link: "/projects?category=Office+%26+Residence",
   },
   {
     image: "/images/orbit/2.png",
     label: "HOTEL",
-    link: "/projects?category=Hotel+and+Resort",
+    link: "/projects?category=Hotel+%26+Resort",
   },
 ];
 

@@ -10,32 +10,32 @@ const projects = [
   {
     title: "Corporate Office",
     image: "/images/projects/urban-company-1.jpg",
-    link: "/projects?category=Office",
+    link: "/projects?category=Office+%26+Residence",
   },
   {
     title: "Commercial Space",
     image: "/images/projects/bsts-corporate-plaza.jpg",
-    link: "/projects?category=Commercial",
+    link: "/projects?category=Hospital+%26+Commercial",
   },
   {
     title: "Hotels & Resorts",
     image: "/images/projects/radison-hotel-top.jpg",
-    link: "/projects?category=Hotel+and+Resort",
+    link: "/projects?category=Hotel+%26+Resort",
   },
   {
     title: "Multispecialty Hospitals",
     image: "/images/projects/sonar-hospital-1.jpg",
-    link: "/projects?category=Hospital",
+    link: "/projects?category=Hospital+%26+Commercial",
   },
   {
     title: "Restaurant, Bar & Brewery",
     image: "/images/projects/tangy-house.jpg",
-    link: "/projects?category=Restaurant%2C+Bar+and+Microbrewery",
+    link: "/projects?category=Restaurant+%26+Bar",
   },
   {
     title: "Highways & Toll Plaza",
     image: "/images/services/service-image-2.webp",
-    link: "/projects?category=Highways+and+Toll+Plaza",
+    link: "/projects?category=Toll+Plaza+%26+Expressway",
   },
   {
     title: "Farm House & Villa",

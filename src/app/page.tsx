@@ -11,6 +11,7 @@ import TrustedBy from "@/components/shared/TrustedBy";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
 import { getLatestPublishedPosts } from "@/lib/blog/repository";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Manthan Architects – Best Architecture & Interior Design Firm in Gurugram",
@@ -27,16 +28,19 @@ export default async function Home() {
 
   const data = [
     {
-      imageSrc: "/images/projects/p1.png",
+      imageSrc: "/images/services/ANM-45-46.webp",
       title: `architecture & design`,
+      link: "/projects",
     },
     {
-      imageSrc: "/images/projects/p2.png",
+      imageSrc: "/images/home/hero-image-3.webp",
       title: "office design & build",
+      link: "/projects?category=Office+%26+Residence&service=build",
     },
     {
-      imageSrc: "/images/services/customizable-furniture-1.jpg",
+      imageSrc: "/images/services/customizable-furniture-3.webp",
       title: "modern & customize furniture",
+      link: "/services/furniture",
     },
   ];
 
@@ -46,22 +50,22 @@ export default async function Home() {
       <Hero />
       <section className="bg-white pt-8 pb-4">
         <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
-          <div className="flex flex-col items-center gap-4">
-            <img src="/images/home/interior-design-1.webp" alt="interior design" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">architects design</span>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <img src="/images/home/interior-design-2.webp" alt="elevation design" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">elevation design</span>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <img src="/images/home/interior-design-3.webp" alt="bespoke furniture" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">bespoke furniture</span>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <img src="/images/home/interior-design-4.webp" alt="decor" className="w-[50px] h-[50px] object-contain" />
-            <span className="font-bold text-lg text-gray-900">decor</span>
-          </div>
+          <Link href="/projects" className="flex flex-col items-center gap-4 cursor-pointer hover:scale-105 transition-transform duration-300 group">
+            <img src="/images/home/interior-design-1.webp" alt="architect" className="w-[50px] h-[50px] object-contain" />
+            <span className="font-bold text-lg text-gray-900 group-hover:text-primary transition-colors">architects</span>
+          </Link>
+          <Link href="/projects" className="flex flex-col items-center gap-4 cursor-pointer hover:scale-105 transition-transform duration-300 group">
+            <img src="/images/home/interior.webp" alt="interior" className="w-[50px] h-[50px] object-contain" />
+            <span className="font-bold text-lg text-gray-900 group-hover:text-primary transition-colors">interior</span>
+          </Link>
+          <Link href="/projects?category=Office+%26+Residence&service=build" className="flex flex-col items-center gap-4 cursor-pointer hover:scale-105 transition-transform duration-300 group">
+            <img src="/images/home/design-build.webp" alt="design & build" className="w-[50px] h-[50px] object-contain" />
+            <span className="font-bold text-lg text-gray-900 group-hover:text-primary transition-colors">design & build</span>
+          </Link>
+          <Link href="/services/furniture" className="flex flex-col items-center gap-4 cursor-pointer hover:scale-105 transition-transform duration-300 group">
+            <img src="/images/home/interior-design-3.webp" alt="furniture" className="w-[50px] h-[50px] object-contain" />
+            <span className="font-bold text-lg text-gray-900 group-hover:text-primary transition-colors">furniture</span>
+          </Link>
         </div>
       </section>
 

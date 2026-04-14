@@ -43,12 +43,12 @@ function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
-      className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-full"
+      className="flex flex-col bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-full group"
     >
       {/* Card Header — light gray, centered */}
       <div className="bg-gray-200 px-8 py-6 flex flex-col items-center justify-center gap-2 border-b border-gray-300">
         <span className="text-3xl">{icon}</span>
-        <h2 className="text-xl font-black text-gray-800 tracking-tight uppercase text-center">{title}</h2>
+        <h2 className="text-2xl md:text-3xl font-normal hover:font-bold transition-all duration-300 cursor-default text-gray-800 tracking-tight uppercase text-center">{title}</h2>
       </div>
 
       {/* Points */}

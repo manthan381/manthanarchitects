@@ -44,7 +44,7 @@ const services = [
     conclusion: "we craft exteriors that not only protect and perform but also inspire and define the character of your space."
   },
   {
-    title: "turn key projects",
+    title: "design build",
     icon: Key,
     description: "we provide complete turnkey solutions, managing every stage of the project from concept to completion. with a client-first approach, we deliver seamless coordination, cost efficiency, and timely execution—ensuring your vision becomes reality without the stress of managing multiple contractors.",
     bullets: [
@@ -93,7 +93,7 @@ export function AboutServicesSection() {
               {/* Card Header — light gray, centered */}
               <div className="bg-gray-200 px-8 py-6 flex flex-col items-center justify-center gap-2 border-b border-gray-300">
                 <span className="text-gray-800"><service.icon size={36} strokeWidth={2.5} /></span>
-                <h3 className="text-xl font-black text-gray-800 tracking-tight text-center">{service.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-normal hover:font-bold transition-all duration-300 cursor-default text-gray-800 tracking-tight text-center">{service.title}</h3>
               </div>
 
               <div className="flex flex-col flex-1 p-8 lg:p-10">

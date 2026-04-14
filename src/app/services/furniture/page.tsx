@@ -4,10 +4,13 @@ import Header from "@/components/shared/Header";
 import Image from "next/image";
 
 const furnitureGallery = [
-  "/images/services/customizable-furniture-1.jpg",
-  "/images/services/w1.png",
-  "/images/services/w2.png",
-  "/images/services/w3.png",
+  "/images/services/customizable-furniture-7.webp",
+  "/images/services/customizable-furniture-4.webp",
+  "/images/services/customizable-furniture-5.webp",
+  "/images/services/customizable-furniture-6.webp",
+  "/images/services/customizable-furniture-8.webp",
+  "/images/services/customizable-furniture-9.webp",
+  "/images/services/customizable-furniture-10.webp",
 ] as const;
 
 export default function FurniturePage() {
@@ -27,7 +30,7 @@ export default function FurniturePage() {
               comfort, and visual continuity with your space.
             </p>
           </div>
-          
+
           <div className="relative w-full aspect-[4/3] xl:aspect-[16/11] rounded-3xl overflow-hidden shadow-2xl lg:scale-110 lg:transform-origin-left my-10 lg:my-0">
             <Image
               src={furnitureGallery[0]}

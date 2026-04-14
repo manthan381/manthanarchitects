@@ -35,12 +35,12 @@ export async function POST(req: Request) {
       from: smtpFrom,
       to: smtpTo,
       replyTo: email,
-      subject: `New Inquiry from ${name} - ${company || "No Company"}`,
+      subject: company ? `New Inquiry from ${name} - ${company}` : `New Inquiry from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
           <h2 style="color: #333;">New Contact Form Submission</h2>
           <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Company:</strong> ${company || "N/A"}</p>
+          ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
           <p style="margin-top: 20px;"><strong>Message:</strong></p>
