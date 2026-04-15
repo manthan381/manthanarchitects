@@ -93,7 +93,7 @@ export default function BlogSection({
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[8/5] w-full">
                 <Image
                   src={blog.coverImage}
                   alt={blog.title}

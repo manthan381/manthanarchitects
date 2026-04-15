@@ -149,7 +149,7 @@ export const projects: Project[] = [
     category: "Office & Residence",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
-    location: "Plot-183 Udyog Vihar Phase-I, Gurugram",
+    location: "Plot-183, Udyog Vihar, Gurugram",
     year: 2023,
     coverImage: "/images/home/hero-image-1.webp",
     images: [
@@ -166,6 +166,77 @@ export const projects: Project[] = [
       "/images/projects/urban-company-office-13.jpg",
       "/images/projects/urban-company-office-14.jpg",
       "/images/projects/urban-company-office-15.jpg",
+    ],
+  },
+  {
+    title: "Fab Hotel, Corporate Office",
+    slug: "fab-hotel-office",
+    category: "Office & Residence",
+    description:
+      "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
+    location: "Plot 183, Udyoog Vihar, Gurugram",
+    year: 2024,
+    coverImage: "/images/projects/feb-hotel/1.webp",
+    images: [
+      "/images/projects/feb-hotel/1.webp",
+      "/images/projects/feb-hotel/2.webp",
+      "/images/projects/feb-hotel/3.webp",
+      "/images/projects/feb-hotel/4.webp",
+      "/images/projects/feb-hotel/5.webp",
+      "/images/projects/feb-hotel/6.webp",
+      "/images/projects/feb-hotel/7.webp",
+      "/images/projects/feb-hotel/8.webp",
+      "/images/projects/feb-hotel/9.webp",
+      "/images/projects/feb-hotel/10.webp",
+    ],
+  },
+  {
+    title: "Medology Office",
+    slug: "medology-office",
+    category: "Office & Residence",
+    description:
+      "A smart technology hub designed to foster innovation, featuring state-of-the-art meeting rooms, ergonomic workstations, and expansive collaborative areas.",
+    location: "Plot 183, Udyoog Vihar, Gurugram",
+    year: 2024,
+    coverImage: "/images/projects/medology/1.webp",
+    images: [
+      "/images/projects/medology/1.webp",
+      "/images/projects/medology/2.webp",
+    ],
+  },
+  {
+    title: "Electrolux Office",
+    slug: "electrolux-office",
+    category: "Office & Residence",
+    description:
+      "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
+    location: "Walled Block, Delhi Cantonment,Delhi",
+    year: 2024,
+    coverImage: "/images/projects/electrolux/1.webp",
+    images: [
+      "/images/projects/electrolux/1.webp",
+    ],
+  },
+  {
+    title: "CIBT Corporate Office",
+    slug: "cibt-corporate-office",
+    category: "Office & Residence",
+    description:
+      "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
+    location: "Gurugram",
+    year: 2023,
+    coverImage: "/images/projects/cibt-office.jpg",
+    images: [
+      "/images/projects/cibt-office.jpg",
+      "/images/projects/cibt-office-1.jpg",
+      "/images/projects/cibt-office-2.jpg",
+      "/images/projects/cibt-office-3.jpg",
+      "/images/projects/cibt-office-4.jpg",
+      "/images/projects/cibt-office-5.jpg",
+      "/images/projects/cibt-office-6.jpg",
+      "/images/projects/cibt-office-7.jpg",
+      "/images/projects/cibt-office-8.jpg",
+      "/images/projects/cibt-office-9.jpg",
     ],
   },
   {
@@ -257,28 +328,7 @@ export const projects: Project[] = [
       "/images/projects/new-door-success-tower-7.jpg",
     ],
   },
-  {
-    title: "CIBT Corporate Office",
-    slug: "cibt-corporate-office",
-    category: "Office & Residence",
-    description:
-      "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
-    location: "Gurugram",
-    year: 2023,
-    coverImage: "/images/projects/cibt-office.jpg",
-    images: [
-      "/images/projects/cibt-office.jpg",
-      "/images/projects/cibt-office-1.jpg",
-      "/images/projects/cibt-office-2.jpg",
-      "/images/projects/cibt-office-3.jpg",
-      "/images/projects/cibt-office-4.jpg",
-      "/images/projects/cibt-office-5.jpg",
-      "/images/projects/cibt-office-6.jpg",
-      "/images/projects/cibt-office-7.jpg",
-      "/images/projects/cibt-office-8.jpg",
-      "/images/projects/cibt-office-9.jpg",
-    ],
-  },
+
   {
     title: "Prabhattyam Solvex  Pvt Limited",
     slug: "prabhattyam-solvex-office",

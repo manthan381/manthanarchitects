@@ -8,6 +8,8 @@ import "./globals.css";
 import Script from "next/script";
 
 //Fonts
+import WhatsAppWidget from "@/components/shared/WhatsAppWidget";
+
 
 const centuryGothic = localFont({
   src: "./fonts/CenturyGothic.woff2", // Relative path from the current file
@@ -70,6 +72,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <WhatsAppWidget />
       </body>
     </html>
   );

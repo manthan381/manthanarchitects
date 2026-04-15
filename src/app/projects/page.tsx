@@ -11,9 +11,8 @@ import { useMemo } from "react";
 
 type DisplayCategory = ProjectCategory | "all projects";
 
-// List of categories with "all projects" in specific order
-const categories: DisplayCategory[] = [
-  "all projects",
+// Keep the visual order from the design while still allowing unseen categories from data.
+const preferredCategoryOrder: ProjectCategory[] = [
   "Hotel & Resort",
   "Hospital & Commercial",
   "Toll Plaza & Expressway",
@@ -22,6 +21,21 @@ const categories: DisplayCategory[] = [
   "Modern Villa",
   "Gym & Others",
 ];
+
+const uniqueDataCategories = Array.from(
+  new Set(projects.map((project) => project.category))
+) as ProjectCategory[];
+
+const orderedDataCategories = [
+  ...preferredCategoryOrder.filter((category) =>
+    uniqueDataCategories.includes(category)
+  ),
+  ...uniqueDataCategories.filter(
+    (category) => !preferredCategoryOrder.includes(category)
+  ),
+];
+
+const categories: DisplayCategory[] = ["all projects", ...orderedDataCategories];
 
 // Category descriptions
 const categoryDescriptions: Record<ProjectCategory | "all projects", string> = {
@@ -45,10 +59,22 @@ export default function ProjectsPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  // De-dupe project entries by slug so "all projects" never repeats cards.
+  const uniqueProjects = useMemo(() => {
+    const seen = new Set<string>();
+    return projects.filter((project) => {
+      if (seen.has(project.slug)) {
+        return false;
+      }
+      seen.add(project.slug);
+      return true;
+    });
+  }, []);
+
   // Single source of truth: the URL
   const selectedCategory = useMemo(() => {
     const category = searchParams.get("category");
-    if (category && categories.includes(category as any)) {
+    if (category && categories.includes(category as DisplayCategory)) {
       return category as DisplayCategory;
     }
     return "all projects";
@@ -66,9 +92,9 @@ export default function ProjectsPage() {
 
   const filteredProjects = useMemo(() => {
     return selectedCategory === "all projects"
-      ? projects.filter((p) => categories.includes(p.category as DisplayCategory))
-      : projects.filter((p) => p.category === selectedCategory);
-  }, [selectedCategory]);
+      ? uniqueProjects
+      : uniqueProjects.filter((project) => project.category === selectedCategory);
+  }, [selectedCategory, uniqueProjects]);
 
   const isBuildService = searchParams.get("service") === "build";
   const displayCategories = isBuildService 

@@ -73,7 +73,7 @@ export default async function BlogDetailPage({
               </p>
             </header>
 
-            <div className="relative w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden mb-10">
+            <div className="relative w-full aspect-[8/5] rounded-xl overflow-hidden mb-10">
               <Image
                 src={post.coverImage}
                 alt={post.title}

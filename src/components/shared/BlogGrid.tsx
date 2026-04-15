@@ -27,13 +27,14 @@ export function BlogGrid({ posts }: Readonly<BlogGridProps>) {
             key={post.id}
             className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
           >
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              width={400}
-              height={250}
-              className="w-full h-56 object-cover"
-            />
+            <div className="relative aspect-[8/5] w-full">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="p-5">
               <Link href={`/blog/${post.slug}`}>
                 <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
