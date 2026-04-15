@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const primaryLinks = [
   { name: "Projects", href: "/projects" },
@@ -55,6 +55,8 @@ function RollingTextLink({
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +64,20 @@ export default function Header() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        servicesMenuRef.current &&
+        !servicesMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -102,23 +118,43 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-3 xl:space-x-8">
             <RollingTextLink name="About Us" href="/about-us" scrolled={isScrolled} />
 
-            <div className="group relative">
-              <Link
-                href="/services"
+            <div
+              ref={servicesMenuRef}
+              className="group relative"
+            >
+              <button
+                type="button"
+                onClick={() => setIsServicesOpen((prev) => !prev)}
+                aria-haspopup="menu"
+                aria-expanded={isServicesOpen}
                 className={`relative transition-all duration-500 text-base xl:text-lg drop-shadow-md whitespace-nowrap lowercase flex items-center gap-1 h-8 ${isScrolled ? "text-[#1c2a22]" : "text-white"
                   } hover:text-[#eb5e22]`}
               >
                 <span>services</span>
-                <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#eb5e22] transition-all duration-300 group-hover:w-full" />
-              </Link>
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : "group-hover:rotate-180"}`}
+                />
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] bg-[#eb5e22] transition-all duration-300 ${isServicesOpen ? "w-full" : "w-0 group-hover:w-full"}`}
+                />
+              </button>
 
-              <div className="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 pt-3 px-4 pb-4 opacity-0 transition-opacity duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
+              <div
+                className={`absolute left-1/2 top-full -translate-x-1/2 pt-3 px-4 pb-4 transition-opacity duration-300 ${isServicesOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"} group-hover:pointer-events-auto group-hover:opacity-100`}
+              >
                 <div className="w-52 rounded-xl border border-gray-200/50 bg-[#f4f4f4]/75 p-2 backdrop-blur-xl shadow-xl">
+                  <Link
+                    href="/services"
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block rounded-lg px-4 py-2.5 text-[15px] font-medium text-gray-800 hover:bg-white hover:text-[#eb5e22] transition-colors lowercase"
+                  >
+                    Services Overview
+                  </Link>
                   {serviceLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
+                      onClick={() => setIsServicesOpen(false)}
                       className="block rounded-lg px-4 py-2.5 text-[15px] font-medium text-gray-800 hover:bg-white hover:text-[#eb5e22] transition-colors lowercase"
                     >
                       {link.name}

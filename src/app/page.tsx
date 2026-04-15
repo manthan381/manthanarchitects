@@ -33,7 +33,7 @@ export default async function Home() {
       link: "/projects",
     },
     {
-      imageSrc: "/images/home/hero-image-3.webp",
+      imageSrc: "/images/home/hero-image-1.webp",
       title: "office design & build",
       link: "/projects?category=Office+%26+Residence&service=build",
     },
