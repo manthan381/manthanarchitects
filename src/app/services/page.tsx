@@ -2,8 +2,20 @@ import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "architects, interior designers & customized furniture services in gurugram",
+  description:
+    "architects, interior designers & Furniture Services in Gurgram? Manthan Architects offers architecture, interior design, turnkey construction & custom furniture solutions for modern spaces.",
+  keywords:
+    "architecture firms in gurgaon, architecture companies in gurgaon, architecture firms in gurgaon",
+  alternates: {
+    canonical: "/services",
+  },
+};
 
 const serviceCards = [
   {
