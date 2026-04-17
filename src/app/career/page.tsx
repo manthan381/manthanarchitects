@@ -2,11 +2,11 @@ import CareerContent from "@/components/shared/CareerContent";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Career at Manthan Architects | Join Our Team",
+  title: "Manthan Architects Careers | Architect, Interior Designer & 3D Jobs in Gurgaon",
   description:
-    "Explore career opportunities at Manthan Architects. Join our architecture, interior, and execution teams to work on impactful residential, commercial, and hospitality projects.",
+    "Join Manthan Architects and build impactful architecture & design projects. Explore careers in architecture, interior design, 3D design & business roles in Gurgaon.",
   keywords:
-    "career in architecture, architecture jobs gurugram, interior designer jobs, site execution jobs, manthan architects career, design studio jobs india",
+    "interior designers in gurgaon, interior design firms in gurgaon, interior design company in gurgaon",
   alternates: {
     canonical: "/career",
   },

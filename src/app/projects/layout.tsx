@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Our Projects – Modern Architects | Residential & Commercial Architecture Firm",
   description:
     "Browse Manthan Architects' projects featuring residential homes, commercial spaces, offices, and hospitals. Experience innovative architecture, interior design, and turnkey solutions.",
-  keywords: "architecture portfolio India, interior design projects Gurugram, completed architecture projects, luxury residential projects, commercial interior design projects, hotel design projects India, office design Gurugram, architecture case studies, best interior design portfolio India",
+  keywords: "top 10 architects in gurgaon, list of architects in delhi ncr, architecture companies",
   alternates: {
     canonical: "/projects",
   },

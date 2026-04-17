@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Insights on Architecture, Design & Construction | Manthan Architects Blog",
   description:
     "Read the latest architecture blogs, interior design ideas, and construction insights from Manthan Architects. Stay updated with modern design trends and expert tips.",
-  keywords: "architecture blog India, interior design tips, elevation design ideas, home design trends, architecture insights Gurugram, interior design blog, modern home design ideas, architecture news India, design inspiration India",
+  keywords: "interior designers, interior design in gurgaon, gurgaon interior",
   alternates: {
     canonical: "/blog",
   },
