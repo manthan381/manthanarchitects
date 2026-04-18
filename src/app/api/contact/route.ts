@@ -54,8 +54,8 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch (error) {
-    console.error("Zoho Email Error:", error);
+  } catch {
+    console.error("Zoho Email Error");
     return NextResponse.json(
       { success: false, error: "Failed to send email" },
       { status: 500 }
